@@ -103,7 +103,7 @@ augroup END
 
 augroup Text
 	au!
-	au FileType text,markdown setlocal linebreak wrap nolist
+	au FileType text,markdown setlocal linebreak nolist
 	au FileType text,markdown setlocal textwidth=90 formatoptions+=1
     au FileType text,markdown setlocal complete+=k
 augroup END
@@ -133,4 +133,4 @@ set laststatus=2
 let g:syntastic_ruby_checker="jruby"
 
 "Dict
-"let g:dict_default_database = "wn"
+let g:dict_hosts = [["dict.org", ["all"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
