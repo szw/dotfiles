@@ -54,7 +54,6 @@ au BufWritePre * :%s/\s\+$//e
 vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p")")")"))
 
-
 augroup PHP
 	au!
 	"au BufNewFile,BufRead *.src set filetype=php
