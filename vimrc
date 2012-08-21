@@ -136,4 +136,7 @@ set laststatus=2
 let g:syntastic_ruby_checker="jruby"
 
 "Dict
-let g:dict_hosts = [["dict.org", ["all"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
+let g:dict_hosts = [
+    \["dict.org", ["english"]],
+    \["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]
+\]
