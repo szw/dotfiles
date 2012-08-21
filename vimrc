@@ -54,6 +54,7 @@ au BufWritePre * :%s/\s\+$//e
 vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p")")")"))
 
+
 augroup PHP
 	au!
 	"au BufNewFile,BufRead *.src set filetype=php
@@ -106,6 +107,8 @@ augroup Text
 	au FileType text,markdown setlocal linebreak nolist
 	au FileType text,markdown setlocal textwidth=90 formatoptions+=1
     au FileType text,markdown setlocal complete+=k
+    " Support for Markdown preview tool: https://github.com/szw/md
+    au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
 
 "Custom plugin settings
