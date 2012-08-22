@@ -110,7 +110,7 @@ augroup Text
 	au FileType text,markdown setlocal linebreak nolist
 	au FileType text,markdown setlocal textwidth=80 formatoptions+=1 cc=81
 	au FileType help setlocal cc=0
-    au FileType text,markdown setlocal complete+=k
+    au FileType text,markdown,gitcommit setlocal complete+=k
     " Support for Markdown preview tool: https://github.com/szw/md
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
