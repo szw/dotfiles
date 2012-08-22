@@ -4,6 +4,7 @@ call pathogen#infect()
 set nocompatible
 set smartindent autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set cc=80
 set number
 set nowrap
 set hls
@@ -104,7 +105,7 @@ augroup END
 augroup Text
 	au!
 	au FileType text,markdown setlocal linebreak nolist
-	au FileType text,markdown setlocal textwidth=90 formatoptions+=1
+	au FileType text,markdown setlocal textwidth=80 formatoptions+=1
     au FileType text,markdown setlocal complete+=k
     " Support for Markdown preview tool: https://github.com/szw/md
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
