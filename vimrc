@@ -137,8 +137,7 @@ let g:ctrlp_working_path_mode = 2
 set laststatus=2
 
 "Syntastic
-"let g:syntastic_ruby_checker="jruby"
-let g:syntastic_ruby_exec="rvm 1.9.3 ruby do ruby"
+let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
 
 "Dict
 let g:dict_hosts = [
