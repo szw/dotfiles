@@ -25,9 +25,8 @@ set foldlevelstart=20
 
 "Colors
 set t_Co=256
-"colorscheme xoria256
-colorscheme molokai
-"let g:molokai_original = 1
+colorscheme moloterm
+let g:moloterm_overlengths = [['ruby,eruby,php,python,javascript,html,xml,css,text,markdown', 80], ['gitcommit', 72]]
 
 "Encoding
 set fileencoding=utf-8
@@ -59,7 +58,7 @@ augroup PHP
 	"au BufNewFile,BufRead *.src set filetype=php
 	"au BufNewFile,BufRead *.inc set filetype=php
 	au FileType php setlocal omnifunc=phpcomplete#CompletePHP
-	au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab cc=81
+	au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
 	"au FileType php,html filetype indent off
 	"au FileType php au InsertLeave * pclose
 augroup END
@@ -70,47 +69,40 @@ augroup Ruby
 	au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 	au FileType ruby,eruby let g:rubycomplete_rails = 1
 	au FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-	au FileType ruby,eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab cc=81
+	au FileType ruby,eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Python
 	au!
 	au FileType python setlocal omnifunc=pythoncomplete#Complete
 	au FileType python setlocal completefunc=RopeCompleteFunc
-	au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab cc=81
+	au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 	au FileType python setlocal completeopt-=preview "turn off the preview window
 augroup END
 
 augroup Javascript
 	au!
 	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    au FileType Javascript setlocal cc=81
 augroup END
 
 augroup Html
 	au!
 	au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-    au FileType html setlocal cc=81
 augroup END
 
 augroup Css
 	au!
 	au FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    au FileType css setlocal cc=81
 augroup END
 
 augroup Xml
 	au!
 	au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-    au FileType xml setlocal cc=81
 augroup END
 
 augroup Text
 	au!
-	"au FileType text,markdown setlocal linebreak nolist
-	au FileType text,markdown setlocal textwidth=80 formatoptions+=1 cc=81
-	au FileType help setlocal cc=0
-	au FileType gitcommit setlocal cc=73
+	au FileType text,markdown setlocal textwidth=80 formatoptions+=1
     au FileType text,markdown,gitcommit setlocal complete+=k
     " Support for Markdown preview tool: https://github.com/szw/md
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
@@ -141,7 +133,4 @@ set laststatus=2
 let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
 
 "Dict
-let g:dict_hosts = [
-    \["dict.org", ["english"]],
-    \["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]
-\]
+let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
