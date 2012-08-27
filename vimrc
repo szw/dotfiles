@@ -26,7 +26,6 @@ set foldlevelstart=20
 "Colors
 set t_Co=256
 colorscheme moloterm
-let g:moloterm_overlengths = [['ruby,eruby,php,python,javascript,html,xml,css,text,markdown', 80], ['gitcommit', 72]]
 
 "Encoding
 set fileencoding=utf-8
@@ -134,3 +133,6 @@ let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
 
 "Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
+
+"Moloterm
+let g:moloterm_overlengths = [['ruby,eruby,php,python,javascript,html,xml,css,text,markdown', 80], ['gitcommit', 72]]
