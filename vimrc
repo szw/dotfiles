@@ -123,7 +123,7 @@ let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree"]
 "imap <Nul> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 "CtrlP
-let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'ra'
 
 "Powerline
 set laststatus=2
