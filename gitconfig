@@ -1,0 +1,6 @@
+[core]
+	editor = vim
+[user]
+	name = Szymon Wrozynski
+[color]
+	ui = auto
