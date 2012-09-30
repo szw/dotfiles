@@ -66,12 +66,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# if [ "$color_prompt" = yes ]; then
-#     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# else
-#     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-# fi
-
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
@@ -126,19 +120,11 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# PS1='\[\e[1;94m\]\u\[\033[30m\]@\[\e[0;35m\]\W\[\e[0;31m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\/`\[\033[31m\]$ \[\033[37m\]'
-# PS1='\[\e[1;32m\]\u\[\033[30m\]:\[\e[0;35m\]\W\[\e[0;31m\]`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\/`\[\033[31m\]$ \[\033[37m\]'
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/home/sw/.local/bin
 
 export JAVA_HOME="/usr/lib/jvm/jdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
-# export JAVA_OPTS="-XX:+TieredCompilation"
 export JAVA_OPTS="-XX:+TieredCompilation -client"
 export JRUBY_OPTS="--1.9 -X-C"
-# export JRUBY_HOME=/home/sw/.rvm/rubies/jruby
-# export GEM_HOME=/home/sw/.rvm/gems/jruby
-# export TORQUEBOX_HOME="$GEM_HOME/gems/torquebox-server-2.x.incremental.1017-java"
-# export JBOSS_HOME="$TORQUEBOX_HOME/jboss"
