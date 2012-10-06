@@ -135,4 +135,4 @@ let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p194/bin/ruby"
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
 
 "Overlen
-let g:overlen_line_lengths = [['ruby,eruby,php,python,javascript,html,xml,css,text,markdown', 110], ['gitcommit', 72]]
+let g:overlen_line_lengths = [['ruby,eruby,php,python,javascript,html,css,text,markdown', 110], ['gitcommit', 72]]
