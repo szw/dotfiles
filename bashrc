@@ -126,5 +126,7 @@ PATH=$PATH:/home/sw/.local/bin
 export JAVA_HOME="/usr/lib/jvm/jdk"
 export PATH=$JAVA_HOME/bin:$PATH
 
-export JAVA_OPTS="-XX:+TieredCompilation -client"
-export JRUBY_OPTS="--1.9 -X-C"
+# export JAVA_OPTS="-XX:+TieredCompilation -client"
+# export JRUBY_OPTS="--1.9 -X-C"
+export JAVA_OPTS="-client"
+export JRUBY_OPTS="--1.9"
