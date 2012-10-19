@@ -48,6 +48,11 @@ filetype indent on
 "Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
 
+"Auto generate ctags
+if filereadable('tags')
+    au BufWritePost * silent! !ctags -R &
+endif
+
 "Set XClip support (\y - copy, \p - paste)
 vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p")")")"))
