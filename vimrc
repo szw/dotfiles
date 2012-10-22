@@ -50,7 +50,7 @@ au BufWritePre * :%s/\s\+$//e
 
 "Auto generate ctags
 if filereadable('tags')
-    au BufWritePost * silent! !ctags -R &
+    au BufWritePost * silent! !ctags -R 2>/dev/null &
 endif
 
 "Set XClip support (\y - copy, \p - paste)
