@@ -44,6 +44,7 @@ set dictionary+=/usr/share/dict/words
 filetype on
 filetype plugin on
 filetype indent on
+runtime macros/matchit.vim
 
 "Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
