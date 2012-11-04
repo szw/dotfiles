@@ -49,9 +49,12 @@ runtime macros/matchit.vim
 "Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
 
-"Set XClip support (\y - copy, \p - paste)
-vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p")")")"))
+"Clipboard support
+set pastetoggle=<F5>
+
+"XClip support (\y - copy, \p - paste)
+vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:echo "Copied to clipboard"<CR>
+nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 augroup PHP
 	au!
