@@ -54,7 +54,7 @@ set pastetoggle=<F5>
 
 "XClip support (\y - copy, \p - paste)
 vmap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:echo "Copied to clipboard"<CR>
-nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+nmap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p:echo "Pasted from clipboard"<CR>
 
 augroup PHP
 	au!
@@ -86,6 +86,11 @@ augroup END
 augroup Javascript
 	au!
 	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+augroup END
+
+augroup CoffeeScript
+    au!
+	au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Html
