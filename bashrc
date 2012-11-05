@@ -120,6 +120,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Turn off XON/XOFF flow control (http://blog.sanctum.geek.nz/terminal-annoyances/)
+stty -ixon
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/home/sw/.local/bin
 
