@@ -53,8 +53,8 @@ au BufWritePre * :%s/\s\+$//e
 set pastetoggle=<F5>
 
 "XClip support (\y - copy, \p - paste)
-vnoremap <Leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:echo "Copied to clipboard"<CR>
-nnoremap <Leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p:echo "Pasted from clipboard"<CR>
+vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<CR>:echo 'Copied to clipboard'<CR>
+nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
 
 "Mute highlight search
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
