@@ -18,6 +18,7 @@ set secure
 set ignorecase
 set smartcase
 set incsearch
+set infercase
 
 "Folding
 set foldmethod=indent
@@ -88,7 +89,7 @@ augroup END
 
 augroup Javascript
 	au!
-	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 augroup END
 
 augroup CoffeeScript
@@ -122,7 +123,7 @@ augroup END
 "Custom plugin settings
 
 "NERDTree
-"let g:NERDTreeDirArrows=0
+nmap <F7> :NERDTreeToggle<CR>
 
 "ACK
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -148,3 +149,6 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 
 "Overlen
 let g:overlen_line_lengths = [['ruby,eruby,php,python,javascript,html,css,text,markdown', 110], ['gitcommit', 72]]
+
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
