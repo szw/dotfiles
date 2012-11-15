@@ -124,6 +124,7 @@ augroup END
 
 "NERDTree
 nmap <F7> :NERDTreeToggle<CR>
+nmap <F6> :NERDTreeFind<CR>
 
 "ACK
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
