@@ -114,7 +114,7 @@ augroup END
 
 augroup Text
 	au!
-	au FileType text,markdown setlocal textwidth=110 formatoptions+=1
+	au FileType text,markdown setlocal textwidth=100 formatoptions+=1
     au FileType text,markdown,gitcommit setlocal complete+=k
     " Support for Markdown preview tool: https://github.com/szw/md
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
@@ -147,9 +147,6 @@ let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p286/bin/ruby"
 
 "Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
-
-"Overlen
-let g:overlen_line_lengths = [['ruby,eruby,php,python,javascript,html,css,text,markdown', 110], ['gitcommit', 72]]
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
