@@ -123,8 +123,8 @@ augroup END
 "Custom plugin settings
 
 "NERDTree
-nmap <F7> :NERDTreeToggle<CR>
-nmap <F6> :NERDTreeFind<CR>
+nmap <silent><F7> :NERDTreeToggle<CR>
+nmap <silent><F6> :NERDTreeFind<CR>
 
 "ACK
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -149,4 +149,7 @@ let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p286/bin/ruby"
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
 
 "Tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <silent><F8> :TagbarToggle<CR>
+
+"Maximizer
+nnoremap <silent><F3> :MaximizerToggle<CR>
