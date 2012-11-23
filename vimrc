@@ -153,3 +153,4 @@ nmap <silent><F8> :TagbarToggle<CR>
 
 "Maximizer
 nnoremap <silent><F3> :MaximizerToggle<CR>
+inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
