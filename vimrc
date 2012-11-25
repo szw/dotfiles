@@ -18,7 +18,7 @@ set secure
 set ignorecase
 set smartcase
 set incsearch
-set infercase
+set noinfercase
 
 "Folding
 set foldmethod=indent
