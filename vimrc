@@ -35,7 +35,7 @@ set termencoding=utf-8
 set encoding=utf-8
 
 "Ignore list
-set wildignore=.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc
+set wildignore=.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,tags,*.tags
 
 "Completion settings
 set ofu=syntaxcomplete#Complete
@@ -58,7 +58,7 @@ vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<C
 nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
 
 "Mute highlight search
-nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
 augroup PHP
 	au!
