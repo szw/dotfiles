@@ -20,6 +20,15 @@ set smartcase
 set incsearch
 set noinfercase
 
+"Command line
+set history=200
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
 "Folding
 set foldmethod=indent
 set foldlevelstart=20
