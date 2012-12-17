@@ -16,6 +16,9 @@ shopt -s histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
+# Update bash history in realtime (http://www.cuberick.com/2008/11/update-bash-history-in-realtime.html)
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -32,8 +35,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-#SW Mods start
-
 # Turn on 256 color support...
 if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
 	export TERM=xterm-256color
@@ -47,8 +48,6 @@ case "$TERM" in
     xterm-256color) color_prompt=yes;;
     screen-256color) color_prompt=yes;;
 esac
-
-#SW Mods end
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
