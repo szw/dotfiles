@@ -17,7 +17,10 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 
 # Update bash history in realtime (http://www.cuberick.com/2008/11/update-bash-history-in-realtime.html)
-PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+# append and reload:
+# PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+# only append:
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

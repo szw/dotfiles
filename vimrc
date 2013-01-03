@@ -144,11 +144,11 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let ropevim_vim_completion = 1
 let ropevim_extended_complete = 1
 let ropevim_guess_project = 1
-let g:ropevim_autoimport_modules = ["os.*","traceback","django.*", "xml.etree"]
+let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "xml.etree"]
 "imap <Nul> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 "CtrlP
-let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode='ra'
 
 "Powerline
 set laststatus=2
