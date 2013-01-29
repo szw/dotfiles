@@ -1,6 +1,6 @@
 call pathogen#infect()
 
-"General options
+" General options
 set nocompatible
 set smartindent autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -10,17 +10,17 @@ set hls
 set mouse=a
 set autoread
 
-"Custom .vimrcs
+" Custom .vimrcs
 set exrc
 set secure
 
-"Search
+" Search
 set ignorecase
 set smartcase
 set incsearch
 set noinfercase
 
-"Command line
+" Command line
 set history=200
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -31,54 +31,53 @@ cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 
-"Folding
+" Folding
 set foldmethod=indent
 set foldlevelstart=20
 
-"Colors
-set t_Co=256
+" Colors
 colorscheme moloterm
 
-"Encoding
+" Encoding
 set fileencoding=utf-8
-"set fileencodings=utf-8
+" set fileencodings=utf-8
 set termencoding=utf-8
 set encoding=utf-8
 
-"Ignore list
+" Ignore list
 set wildignore=.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,tags,*.tags
 
-"Completion settings
+" Completion settings
 set ofu=syntaxcomplete#Complete
 set dictionary+=/usr/share/dict/words
 
-"Custom language settings
+" Custom language settings
 filetype on
 filetype plugin on
 filetype indent on
 runtime macros/matchit.vim
 
-"Remove trailing spaces
+" Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
 
-"Clipboard support
+" Clipboard support
 set pastetoggle=<F5>
 
-"XClip support (\y - copy, \p - paste)
+" XClip support (\y - copy, \p - paste)
 vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<CR>:echo 'Copied to clipboard'<CR>
 nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
 
-"Mute highlight search
+" Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
 augroup PHP
     au!
-    "au BufNewFile,BufRead *.src set filetype=php
-    "au BufNewFile,BufRead *.inc set filetype=php
+    " au BufNewFile,BufRead *.src set filetype=php
+    " au BufNewFile,BufRead *.inc set filetype=php
     au FileType php setlocal omnifunc=phpcomplete#CompletePHP
     au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
-    "au FileType php,html filetype indent off
-    "au FileType php au InsertLeave * pclose
+    " au FileType php,html filetype indent off
+    " au FileType php au InsertLeave * pclose
 augroup END
 
 augroup Ruby
@@ -131,38 +130,38 @@ augroup Text
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
 
-"Custom plugin settings
+" Custom plugin settings
 
-"NERDTree
+" NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
 nmap <silent><F6> :NERDTreeFind<CR>
 
-"ACK
+" ACK
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-"Ropevim
+" Ropevim
 let ropevim_vim_completion = 1
 let ropevim_extended_complete = 1
 let ropevim_guess_project = 1
 let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "xml.etree"]
-"imap <Nul> <C-R>=RopeCodeAssistInsertMode()<CR>
+" imap <Nul> <C-R>=RopeCodeAssistInsertMode()<CR>
 
-"CtrlP
+" CtrlP
 let g:ctrlp_working_path_mode='ra'
 
-"Powerline
+" Powerline
 set laststatus=2
 
-"Syntastic
+" Syntastic
 let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p374/bin/ruby"
 
-"Dict
+" Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
 
-"Tagbar
+" Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
 
-"Maximizer
+" Maximizer
 nnoremap <silent><F3> :MaximizerToggle!<CR>
 vnoremap <silent><F3> :MaximizerToggle!<CR>gv
 inoremap <silent><F3> <C-o>:MaximizerToggle!<CR>
