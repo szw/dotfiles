@@ -38,13 +38,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# Turn on 256 color support...
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-	export TERM=xterm-256color
-fi
-
-[[ $TERM == "screen" ]] && export -p TERM="screen-256color"
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color) color_prompt=yes;;
