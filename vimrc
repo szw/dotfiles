@@ -52,6 +52,7 @@ set ofu=syntaxcomplete#Complete
 set dictionary+=/usr/share/dict/words
 
 " Custom language settings
+syntax on
 filetype on
 filetype plugin on
 filetype indent on
@@ -60,12 +61,13 @@ runtime macros/matchit.vim
 " Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
 
-" Clipboard support
+" Alternative clipboard support (\y - copy, \p - paste)
 set pastetoggle=<F5>
 
-" XClip support (\y - copy, \p - paste)
-vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<CR>:echo 'Copied to clipboard'<CR>
-nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
+if substitute(system('uname'), "\n", "", "") == 'Linux'
+    vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<CR>:echo 'Copied to clipboard'<CR>
+    nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
+endif
 
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
@@ -135,9 +137,6 @@ augroup END
 " NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
 nmap <silent><F6> :NERDTreeFind<CR>
-
-" ACK
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Ropevim
 let ropevim_vim_completion = 1

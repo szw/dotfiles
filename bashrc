@@ -7,7 +7,9 @@
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
+
+HISTIGNORE='ls:bg:fg:history:tmux'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -118,11 +120,23 @@ fi
 # Turn off XON/XOFF flow control (http://blog.sanctum.geek.nz/terminal-annoyances/)
 stty -ixon
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/home/sw/.local/bin
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
-export JAVA_HOME="/usr/lib/jvm/jdk"
-export PATH=$JAVA_HOME/bin:$PATH
+if [ $(uname -s) = "Darwin" ]; then
+    PATH=/usr/bin:/bin:/usr/sbin:/sbin
+    export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+    alias ls='ls -G'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+else
+    PATH=$HOME/.local/bin:$PATH
+    export JAVA_HOME="/usr/lib/jvm/jdk"
+    export PATH=$JAVA_HOME/bin:$PATH
+fi
 
 # export JAVA_OPTS="-XX:+TieredCompilation -client"
 # export JRUBY_OPTS="--1.9 -X-C"
