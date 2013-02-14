@@ -35,6 +35,9 @@ cnoremap <M-f> <S-Right>
 set foldmethod=indent
 set foldlevelstart=20
 
+" Paste mode
+set pastetoggle=<F5>
+
 " Colors
 colorscheme moloterm
 
@@ -61,16 +64,10 @@ runtime macros/matchit.vim
 " Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
 
-" Alternative clipboard support (\y - copy, \p - paste)
-set pastetoggle=<F5>
-
-if substitute(system('uname'), "\n", "", "") == 'Linux'
-    vnoremap <Leader>y y:call system('xclip -i -selection clipboard', getreg('"'))<CR>:echo 'Copied to clipboard'<CR>
-    nnoremap <Leader>p :call setreg('"', system('xclip -o -selection clipboard'))<CR>p:echo 'Pasted from clipboard'<CR>
-endif
-
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
+
+" Custom filetype settings
 
 augroup PHP
     au!
@@ -132,7 +129,7 @@ augroup Text
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
 
-" Custom plugin settings
+" Custom plugins settings
 
 " NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
