@@ -9,6 +9,7 @@ set nowrap
 set hls
 set mouse=a
 set autoread
+set backspace=indent,eol,start
 
 " Custom .vimrcs
 set exrc
