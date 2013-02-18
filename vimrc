@@ -149,7 +149,7 @@ let g:ctrlp_working_path_mode='ra'
 set laststatus=2
 
 " Syntastic
-let g:syntastic_ruby_exec="~/.rvm/rubies/ruby-1.9.3-p374/bin/ruby"
+let g:syntastic_ruby_exec="~/.rvm/rubies/mri/bin/ruby"
 
 " Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
