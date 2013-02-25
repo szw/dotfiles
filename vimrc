@@ -158,6 +158,9 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
 
+" Vim-Tags
+let g:vim_tags_directory = '.git'
+
 " Maximizer
 nnoremap <silent><F3> :MaximizerToggle!<CR>
 vnoremap <silent><F3> :MaximizerToggle!<CR>gv
