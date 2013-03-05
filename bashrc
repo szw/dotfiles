@@ -9,7 +9,7 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:erasedups
 
-HISTIGNORE='ls:bg:fg:history:tmux'
+HISTIGNORE='ls:bg:fg:history:tmux -2u:vim:mc:exit'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -123,8 +123,7 @@ stty -ixon
 PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 if [ $(uname -s) = "Darwin" ]; then
-    PATH=/usr/bin:/bin:/usr/sbin:/sbin
-    export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+    export PATH=$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
     alias ls='ls -G'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
