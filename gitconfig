@@ -4,3 +4,5 @@
 	name = Szymon Wrozynski
 [color]
 	ui = auto
+[push]
+	default = simple
