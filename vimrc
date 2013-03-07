@@ -8,6 +8,7 @@ set number
 set nowrap
 set hls
 set mouse=a
+set ttymouse=xterm2
 set autoread
 set backspace=indent,eol,start
 
