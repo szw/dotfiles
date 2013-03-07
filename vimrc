@@ -151,7 +151,7 @@ let g:ctrlp_extensions = ['tag']
 set laststatus=2
 
 " Syntastic
-let g:syntastic_ruby_exec="~/.rvm/rubies/mri/bin/ruby"
+let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
 
 " Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
