@@ -2,6 +2,7 @@
 	editor = vim
 [user]
 	name = Szymon Wrozynski
+	email = szymon@wrozynski.com
 [color]
 	ui = auto
 [push]
