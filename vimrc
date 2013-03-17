@@ -127,7 +127,7 @@ augroup Text
     au!
     au FileType text,markdown setlocal textwidth=100 formatoptions+=1
     au FileType text,markdown,gitcommit setlocal complete+=k infercase
-    " Support for Markdown preview tool: https://github.com/szw/md
+    " Support for the Markdown Viewer: https://github.com/szw/md
     au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
 
