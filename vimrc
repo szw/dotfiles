@@ -133,6 +133,9 @@ augroup END
 
 " Custom plugins settings
 
+" delimitMate
+au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
+
 " NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
 nmap <silent><F6> :NERDTreeFind<CR>
