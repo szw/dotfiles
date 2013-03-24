@@ -50,7 +50,7 @@ set termencoding=utf-8
 set encoding=utf-8
 
 " Ignore list
-set wildignore=.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,tags,*.tags
+set wildignore=.git,.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,tags,*.tags
 
 " Completion settings
 set ofu=syntaxcomplete#Complete
@@ -162,9 +162,6 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
-
-" Vim-Tags
-let g:vim_tags_directory = '.git'
 
 " Maximizer
 nnoremap <silent><F3> :MaximizerToggle!<CR>
