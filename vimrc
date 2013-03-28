@@ -2,6 +2,7 @@ call pathogen#infect()
 
 " General options
 set nocompatible
+set hidden
 set smartindent autoindent
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set number
