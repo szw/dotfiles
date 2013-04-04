@@ -15,7 +15,7 @@ set backspace=indent,eol,start
 
 "Swap files
 set swapfile
-set dir=~/.vim/.swp
+set dir=/tmp
 
 " Custom .vimrcs
 set exrc
