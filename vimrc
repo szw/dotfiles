@@ -13,6 +13,10 @@ set ttymouse=xterm2
 set autoread
 set backspace=indent,eol,start
 
+"Swap files
+set swapfile
+set dir=~/.vim/.swp
+
 " Custom .vimrcs
 set exrc
 set secure
