@@ -88,11 +88,11 @@ augroup END
 
 augroup Ruby
     au!
-    au FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
-    au FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-    au FileType ruby,eruby let g:rubycomplete_rails = 1
-    au FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-    au FileType ruby,eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+    au FileType ruby,eruby,haml setlocal omnifunc=rubycomplete#Complete
+    au FileType ruby,eruby,haml let g:rubycomplete_buffer_loading = 1
+    au FileType ruby,eruby,haml let g:rubycomplete_rails = 1
+    au FileType ruby,eruby,haml let g:rubycomplete_classes_in_global = 1
+    au FileType ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Python
@@ -155,6 +155,7 @@ let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "xml.etree"
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_extensions = ['tag']
+let g:ctrlp_custom_ignore = '\v(tmp|temp)[\/]'
 
 " Powerline
 set laststatus=2
