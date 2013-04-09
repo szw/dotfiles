@@ -174,5 +174,22 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
 
-"Maximizer
+" Maximizer
 let g:maximizer_use_mapping_with_bang = 1
+
+" Dispatch
+fun! g:dispatch_rspec(file_name)
+    let dispatch_rspec = ':Dispatch rspec'
+
+    if match(a:file_name, '^spec/.*_spec.rb$') == 0
+        let dispatch_rspec .= ' %'
+    endif
+
+    if isdirectory('spec')
+        silent! exe dispatch_rspec
+    else
+        echo 'Cannot run rspec: "spec" directory not found'
+    endif
+endfun
+
+nnoremap <silent><F9> :call g:dispatch_rspec(expand('%'))<CR>
