@@ -179,3 +179,4 @@ let g:maximizer_use_mapping_with_bang = 1
 
 " MiniBufExplorer
 let g:miniBufExplUseSingleClick = 1
+nmap <silent><F2> :MiniBufExplorer<cr>
