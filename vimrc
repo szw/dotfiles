@@ -177,4 +177,5 @@ nmap <silent><F8> :TagbarToggle<CR>
 let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
+let g:BufferListShowUnnamed = 1
 map <silent><F2> :call BufferList()<CR>
