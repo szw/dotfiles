@@ -45,9 +45,9 @@ set foldlevelstart=20
 " Paste mode
 set pastetoggle=<F5>
 
-" New tab (works with MiniBufExplorer)
-noremap <silent><F11> :tabe<CR>:UMiniBufExplorer<CR>:blast<CR>
-inoremap <silent><F11> <C-[>:tabe<CR>:UMiniBufExplorer<CR>:blast<CR>
+" New tab
+noremap <silent><F11> :tabe<CR>
+inoremap <silent><F11> <C-[>:tabe<CR>
 
 " Colors
 colorscheme moloterm
@@ -176,6 +176,5 @@ nmap <silent><F8> :TagbarToggle<CR>
 " Maximizer
 let g:maximizer_use_mapping_with_bang = 1
 
-" MiniBufExplorer
-let g:miniBufExplUseSingleClick = 1
-nmap <silent><F2> :MiniBufExplorer<CR>
+" BufferList
+map <silent><F2> :call BufferList()<CR>
