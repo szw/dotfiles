@@ -124,7 +124,8 @@ augroup END
 
 augroup Css
     au!
-    au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType scss setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Xml
@@ -178,4 +179,5 @@ let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
 let g:BufferListShowUnnamed = 1
+let g:BufferListMaxWidth = 50
 map <silent><F2> :call BufferList()<CR>
