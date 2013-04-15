@@ -133,6 +133,10 @@ augroup Xml
     au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
 
+augroup Yaml
+    au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+augroup END
+
 augroup Text
     au!
     au FileType text,markdown setlocal textwidth=100 formatoptions+=1
