@@ -7,3 +7,5 @@
 	ui = auto
 [push]
 	default = simple
+[github]
+	user = szw
