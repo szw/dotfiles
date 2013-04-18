@@ -131,6 +131,10 @@ if [ $(uname -s) = "Darwin" ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
+    fi
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
