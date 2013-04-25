@@ -1,0 +1,7 @@
+LineLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: true
+  CountComments: false
+  Max: 25
