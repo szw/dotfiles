@@ -1,6 +1,9 @@
 LineLength:
   Enabled: false
 
+StringLiterals:
+  Enabled: false # because "" is better than '' https://github.com/styleguide/ruby
+
 MethodLength:
   Enabled: true
   CountComments: false
