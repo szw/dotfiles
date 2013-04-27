@@ -184,6 +184,7 @@ let g:maximizer_use_mapping_with_bang = 1
 " BufferList
 let g:BufferListShowUnnamed = 1
 let g:BufferListMaxWidth = 50
+let g:BufferListShowTabFriends = 2
 map <silent><F2> :call BufferList()<CR>
 
 " RuboCop
