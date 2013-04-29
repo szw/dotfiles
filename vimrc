@@ -81,68 +81,73 @@ nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 " Custom filetype settings
 
 augroup PHP
-    au!
-    " au BufNewFile,BufRead *.src set filetype=php
-    " au BufNewFile,BufRead *.inc set filetype=php
-    au FileType php setlocal omnifunc=phpcomplete#CompletePHP
-    au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
-    " au FileType php,html filetype indent off
-    " au FileType php au InsertLeave * pclose
+  au!
+  " au BufNewFile,BufRead *.src set filetype=php
+  " au BufNewFile,BufRead *.inc set filetype=php
+  au FileType php setlocal omnifunc=phpcomplete#CompletePHP
+  au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
+  " au FileType php,html filetype indent off
+  " au FileType php au InsertLeave * pclose
 augroup END
 
 augroup Ruby
-    au!
-    au FileType ruby,eruby,haml setlocal omnifunc=rubycomplete#Complete
-    au FileType ruby,eruby,haml let g:rubycomplete_buffer_loading = 1
-    au FileType ruby,eruby,haml let g:rubycomplete_rails = 1
-    au FileType ruby,eruby,haml let g:rubycomplete_classes_in_global = 1
-    au FileType ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au!
+  au FileType ruby,eruby,haml setlocal omnifunc=rubycomplete#Complete
+  au FileType ruby,eruby,haml let g:rubycomplete_buffer_loading = 1
+  au FileType ruby,eruby,haml let g:rubycomplete_rails = 1
+  au FileType ruby,eruby,haml let g:rubycomplete_classes_in_global = 1
+  au FileType ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Python
-    au!
-    au FileType python setlocal omnifunc=pythoncomplete#Complete
-    au FileType python setlocal completefunc=RopeCompleteFunc
-    au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-    au FileType python setlocal completeopt-=preview "turn off the preview window
+  au!
+  au FileType python setlocal omnifunc=pythoncomplete#Complete
+  au FileType python setlocal completefunc=RopeCompleteFunc
+  au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  au FileType python setlocal completeopt-=preview "turn off the preview window
+augroup END
+
+augroup Vimscript
+  au!
+  au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Javascript
-    au!
-    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+  au!
+  au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 augroup END
 
 augroup CoffeeScript
-    au!
-    au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au!
+  au FileType coffee setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Html
-    au!
-    au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+  au!
+  au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 augroup END
 
 augroup Css
-    au!
-    au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-    au FileType scss setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au!
+  au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+  au FileType scss setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Xml
-    au!
-    au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+  au!
+  au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup END
 
 augroup Yaml
-    au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Text
-    au!
-    au FileType text,markdown setlocal textwidth=100 formatoptions+=1
-    au FileType text,markdown,gitcommit setlocal complete+=k infercase
-    " Support for the Markdown Viewer: https://github.com/szw/md
-    au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
+  au!
+  au FileType text,markdown setlocal textwidth=100 formatoptions+=1
+  au FileType text,markdown,gitcommit setlocal complete+=k infercase
+  " Support for the Markdown Viewer: https://github.com/szw/md
+  au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
 augroup END
 
 " Custom plugins settings
@@ -182,10 +187,9 @@ nmap <silent><F8> :TagbarToggle<CR>
 let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
-let g:BufferListShowUnnamed = 1
 let g:BufferListMaxWidth = 50
 let g:BufferListShowTabFriends = 2
-map <silent><F2> :call BufferList()<CR>
+map <silent><F2> :BufferList<CR>
 
 " RuboCop
 nnoremap <silent><F12> :RuboCop<CR>
