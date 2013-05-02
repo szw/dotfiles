@@ -12,6 +12,7 @@ set mouse=a
 set ttymouse=xterm2
 set autoread
 set backspace=indent,eol,start
+set shortmess+=I
 
 "Swap files
 set swapfile
