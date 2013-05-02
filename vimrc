@@ -78,6 +78,12 @@ au BufWritePre * :%s/\s\+$//e
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
+" Additional commands for writing
+command! -bang -nargs=0 W :w<bang>
+command! -bang -nargs=0 Wa :wa<bang>
+command! -bang -nargs=0 Wq :wq<bang>
+command! -bang -nargs=0 Wqa :wqa<bang>
+
 " Custom filetype settings
 
 augroup PHP
@@ -188,7 +194,6 @@ let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
 let g:BufferListMaxWidth = 50
-let g:BufferListShowTabFriends = 2
 map <silent><F2> :BufferList<CR>
 
 " RuboCop
