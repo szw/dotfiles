@@ -39,6 +39,18 @@ cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
 
+if has("user_commands")
+  command! -bang -nargs=? -complete=file E e<bang> <args>
+  command! -bang -nargs=? -complete=file W w<bang> <args>
+  command! -bang -nargs=? -complete=file Wq wq<bang> <args>
+  command! -bang -nargs=? -complete=file WQ wq<bang> <args>
+  command! -bang Wa wa<bang>
+  command! -bang WA wa<bang>
+  command! -bang Q q<bang>
+  command! -bang QA qa<bang>
+  command! -bang Qa qa<bang>
+endif
+
 " Folding
 set foldmethod=indent
 set foldlevelstart=20
@@ -78,12 +90,6 @@ au BufWritePre * :%s/\s\+$//e
 
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Additional commands for writing
-command! -bang -nargs=0 W :w<bang>
-command! -bang -nargs=0 Wa :wa<bang>
-command! -bang -nargs=0 Wq :wq<bang>
-command! -bang -nargs=0 Wqa :wqa<bang>
 
 " Custom filetype settings
 
