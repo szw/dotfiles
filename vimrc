@@ -62,6 +62,9 @@ set pastetoggle=<F5>
 noremap <silent><F11> :tabe<CR>
 inoremap <silent><F11> <C-[>:tabe<CR>
 
+" Toggle wrapping
+noremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
+
 " Colors
 colorscheme moloterm
 
