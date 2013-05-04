@@ -204,6 +204,8 @@ let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
 let g:BufferListMaxWidth = 50
+let g:BufferListMaxHeight = 15
+let g:BufferListBottom = 1
 map <silent><F2> :BufferList<CR>
 
 " RuboCop
