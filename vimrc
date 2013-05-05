@@ -13,6 +13,7 @@ set ttymouse=xterm2
 set autoread
 set backspace=indent,eol,start
 set shortmess+=I
+set timeout timeoutlen=3000 ttimeoutlen=100
 
 "Swap files
 set swapfile
