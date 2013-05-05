@@ -201,7 +201,7 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 nmap <silent><F8> :TagbarToggle<CR>
 
 " Maximizer
-let g:maximizer_use_mapping_with_bang = 1
+let g:maximizer_set_mapping_with_bang = 1
 
 " BufferList
 let g:bufferlist_max_width = 50
