@@ -208,8 +208,5 @@ let g:bufferlist_max_width = 50
 let g:bufferlist_max_height = 15
 let g:bufferlist_stick_to_bottom = 1
 
-" SmartClose
-let g:smartclose_delay = 3000
-
 " RuboCop
 nnoremap <silent><F12> :RuboCop<CR>
