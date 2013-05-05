@@ -204,10 +204,9 @@ nmap <silent><F8> :TagbarToggle<CR>
 let g:maximizer_use_mapping_with_bang = 1
 
 " BufferList
-let g:BufferListMaxWidth = 50
-let g:BufferListMaxHeight = 15
-let g:BufferListBottom = 1
-map <silent><F2> :BufferList<CR>
+let g:bufferlist_max_width = 50
+let g:bufferlist_max_height = 15
+let g:bufferlist_stick_to_bottom = 1
 
 " RuboCop
 nnoremap <silent><F12> :RuboCop<CR>
