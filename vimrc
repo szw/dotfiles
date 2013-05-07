@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 " General options
 set nocompatible
 set hidden
@@ -14,6 +12,63 @@ set autoread
 set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
+
+" Vundle
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle "Raimondi/delimitMate"
+Bundle "glts/vim-textobj-comment"
+Bundle "gmarik/vundle"
+Bundle "jgdavey/vim-blockle"
+Bundle "kana/vim-textobj-entire"
+Bundle "kana/vim-textobj-lastpat"
+Bundle "kana/vim-textobj-line"
+Bundle "kana/vim-textobj-user"
+Bundle "kchmck/vim-coffee-script"
+Bundle "kien/ctrlp.vim"
+Bundle "lambdalisue/vim-django-support"
+Bundle "majutsushi/tagbar"
+Bundle "mattn/gist-vim"
+Bundle "mattn/webapi-vim"
+Bundle "mileszs/ack.vim"
+Bundle "msanders/snipmate.vim"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "ngmy/vim-rubocop"
+Bundle "pangloss/vim-javascript"
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/syntastic"
+Bundle "shawncplus/phpcomplete.vim"
+Bundle "szw/moloterm"
+Bundle "szw/rope-vim"
+Bundle "szw/vim-bufferlist2"
+Bundle "szw/vim-dict"
+Bundle "szw/vim-g"
+Bundle "szw/vim-maximizer"
+Bundle "szw/vim-powerline"
+Bundle "szw/vim-smartclose"
+Bundle "szw/vim-tags"
+Bundle "szw/vim-testrunner"
+Bundle "szw/xmledit"
+Bundle "terryma/vim-multiple-cursors"
+Bundle "tpope/vim-abolish"
+Bundle "tpope/vim-characterize"
+Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-dispatch"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rake"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-unimpaired"
+Bundle "vim-ruby/vim-ruby"
+Bundle "vim-scripts/Tabmerge"
+Bundle "vim-scripts/indentpython.vim"
 
 "Swap files
 set swapfile
