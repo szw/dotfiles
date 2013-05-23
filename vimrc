@@ -36,7 +36,6 @@ Bundle "mattn/webapi-vim"
 Bundle "mileszs/ack.vim"
 Bundle "msanders/snipmate.vim"
 Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "ngmy/vim-rubocop"
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
@@ -258,10 +257,5 @@ nmap <silent><F8> :TagbarToggle<CR>
 " Maximizer
 let g:maximizer_set_mapping_with_bang = 1
 
-" BufferList
-let g:bufferlist_max_width = 50
-let g:bufferlist_max_height = 15
-let g:bufferlist_stick_to_bottom = 1
-
-" RuboCop
-nnoremap <silent><F12> :RuboCop<CR>
+" Vim-Fugitive
+nnoremap <silent><F12> :Gstatus<CR>
