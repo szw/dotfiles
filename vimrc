@@ -20,6 +20,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle "Raimondi/delimitMate"
+Bundle "Valloric/YouCompleteMe"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
@@ -42,6 +43,7 @@ Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "szw/moloterm"
 Bundle "szw/rope-vim"
+Bundle "szw/vim-delayed-completion"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-g"
 Bundle "szw/vim-maximizer"
@@ -259,3 +261,14 @@ let g:maximizer_set_mapping_with_bang = 1
 
 " Vim-Fugitive
 nnoremap <silent><F12> :Gstatus<CR>
+
+" Vim-NextBufferList
+let g:next_bufferlist_max_height = 25
+
+" YouCompleteMe
+let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_semantic_triggers = {} " turn off autostart of semantic completion
+let g:ycm_key_list_select_completion = ['<Down>'] " remove TAB to allow Snipmate to operate
+let g:ycm_key_list_previous_completion = ['<Up>'] " remove S-TAB to allow Snipmate to operate
+let g:ycm_allow_changing_updatetime = 0 " vim-delayed-completion will handle that
