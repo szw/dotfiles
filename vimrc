@@ -71,9 +71,14 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "vim-scripts/Tabmerge"
 Bundle "vim-scripts/indentpython.vim"
 
-"Swap files
-set swapfile
+" Swap/backup files
+set noswapfile
 set dir=/tmp
+set nowb
+set nobackup
+
+" Low updatetime, since we don't write swaps
+set updatetime=500
 
 " Custom .vimrcs
 set exrc
