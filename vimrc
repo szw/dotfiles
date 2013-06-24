@@ -12,6 +12,7 @@ set autoread
 set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
+set laststatus=2
 
 " Vundle
 filetype off
@@ -19,10 +20,13 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "Raimondi/delimitMate"
-Bundle "Valloric/YouCompleteMe"
+Bundle "ervandew/supertab"
+Bundle "garbas/vim-snipmate"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
+Bundle "honza/vim-snippets"
 Bundle "jgdavey/vim-blockle"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-lastpat"
@@ -35,15 +39,14 @@ Bundle "majutsushi/tagbar"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 Bundle "mileszs/ack.vim"
-Bundle "msanders/snipmate.vim"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
+Bundle "sickill/vim-pasta"
 Bundle "szw/moloterm"
 Bundle "szw/rope-vim"
-Bundle "szw/vim-delayed-completion"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-g"
 Bundle "szw/vim-maximizer"
@@ -52,8 +55,10 @@ Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
+Bundle "szw/vim-wisecomplete"
 Bundle "szw/xmledit"
 Bundle "terryma/vim-multiple-cursors"
+Bundle "tomtom/tlib_vim"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-characterize"
 Bundle "tpope/vim-commentary"
@@ -78,7 +83,7 @@ set nowb
 set nobackup
 
 " Low updatetime, since we don't write swaps
-set updatetime=500
+set updatetime=200
 
 " Custom .vimrcs
 set exrc
@@ -143,6 +148,13 @@ set wildignore=.git,.svn,CVS,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.
 set ofu=syntaxcomplete#Complete
 set dictionary+=/usr/share/dict/words
 
+" Omnicompletion trigger
+if !has("gui_running")
+  inoremap <unique><Nul> <C-x><C-o><C-p>
+else
+  inoremap <unique><C-Space> <C-x><C-o><C-p>
+endif
+
 " Custom language settings
 syntax on
 filetype on
@@ -180,7 +192,7 @@ augroup END
 augroup Python
   au!
   au FileType python setlocal omnifunc=pythoncomplete#Complete
-  au FileType python setlocal completefunc=RopeCompleteFunc
+  " au FileType python setlocal completefunc=RopeCompleteFunc
   au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
   au FileType python setlocal completeopt-=preview "turn off the preview window
 augroup END
@@ -230,6 +242,12 @@ augroup END
 
 " Custom plugins settings
 
+" WiseComplete
+let g:wisecomplete_case_sensitive = 1
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+
 " delimitMate
 au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
 
@@ -248,9 +266,6 @@ let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "xml.etree"
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = '\v(tmp|temp)[\/]'
-
-" Powerline
-set laststatus=2
 
 " Syntastic
 let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
@@ -271,9 +286,7 @@ nnoremap <silent><F12> :Gstatus<CR>
 let g:next_bufferlist_max_height = 25
 
 " YouCompleteMe
-let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_semantic_triggers = {} " turn off autostart of semantic completion
-let g:ycm_key_list_select_completion = ['<Down>'] " remove TAB to allow Snipmate to operate
-let g:ycm_key_list_previous_completion = ['<Up>'] " remove S-TAB to allow Snipmate to operate
-let g:ycm_allow_changing_updatetime = 0 " vim-delayed-completion will handle that
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_semantic_triggers = {} " turn off autostart of semantic completion
+" let g:ycm_filetype_identifier_grouping = 0
