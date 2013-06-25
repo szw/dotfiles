@@ -49,13 +49,13 @@ Bundle "szw/moloterm"
 Bundle "szw/rope-vim"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-g"
+Bundle "szw/vim-kompleter"
 Bundle "szw/vim-maximizer"
 Bundle "szw/vim-next-bufferlist"
 Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
-Bundle "szw/vim-wisecomplete"
 Bundle "szw/xmledit"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tomtom/tlib_vim"
@@ -242,8 +242,8 @@ augroup END
 
 " Custom plugins settings
 
-" WiseComplete
-let g:wisecomplete_case_sensitive = 1
+" Kompleter
+let g:kompleter_case_sensitive = 1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
