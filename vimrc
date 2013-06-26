@@ -20,13 +20,15 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "tomtom/tlib_vim"
+" Bundle "garbas/vim-snipmate"
+" Bundle "honza/vim-snippets"
+
 Bundle "Raimondi/delimitMate"
 Bundle "ervandew/supertab"
-Bundle "garbas/vim-snipmate"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
-Bundle "honza/vim-snippets"
 Bundle "jgdavey/vim-blockle"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-lastpat"
@@ -58,7 +60,6 @@ Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
 Bundle "szw/xmledit"
 Bundle "terryma/vim-multiple-cursors"
-Bundle "tomtom/tlib_vim"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-characterize"
 Bundle "tpope/vim-commentary"
