@@ -145,3 +145,13 @@ fi
 # export JRUBY_OPTS="--1.9 -X-C"
 export JAVA_OPTS="-client"
 export JRUBY_OPTS="--1.9"
+
+# PROMPT_COMMAND="echo -ne \"\\033]0;\${USER}@${HOSTNAME}\\007\\033k\${PWD}\\033\\\\\"; $PROMPT_COMMAND"
+
+# set_tmux_title(){ if [ "$PWD" != "$LPWD" ];then LPWD="$PWD"; tmux rename-window "${PWD//*\//} {pane_current_command}"; fi };
+
+# case "$TERM" in
+#     screen) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
+#     screen-color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
+#     screen-256color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
+# esac

@@ -243,9 +243,6 @@ augroup END
 
 " Custom plugins settings
 
-" Kompleter
-let g:kompleter_case_sensitive = 1
-
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
