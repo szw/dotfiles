@@ -20,13 +20,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "tomtom/tlib_vim"
-" Bundle "garbas/vim-snipmate"
-" Bundle "honza/vim-snippets"
-
 Bundle "Raimondi/delimitMate"
 Bundle "ervandew/supertab"
+Bundle "fweep/vim-tabber"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
@@ -278,13 +274,14 @@ nmap <silent><F8> :TagbarToggle<CR>
 let g:maximizer_set_mapping_with_bang = 1
 
 " Vim-Fugitive
-nnoremap <silent><F12> :Gstatus<CR>
+nnoremap <silent><F4> :Gstatus<CR>
 
 " Vim-NextBufferList
 let g:next_bufferlist_max_height = 25
 
-" YouCompleteMe
-" let g:ycm_collect_identifiers_from_tags_files = 1
-" let g:ycm_collect_identifiers_from_comments_and_strings = 1
-" let g:ycm_semantic_triggers = {} " turn off autostart of semantic completion
-" let g:ycm_filetype_identifier_grouping = 0
+" Tabber
+set tabline=%!tabber#TabLine()
+let g:tabber_divider_style = 'compatible'
+let g:tabber_prompt_for_new_label = 1
+let g:tabber_wrap_when_shifting = 1
+nnoremap <silent><F12> :TabberLabel<CR>
