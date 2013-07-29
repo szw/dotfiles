@@ -22,7 +22,6 @@ call vundle#rc()
 
 Bundle "Raimondi/delimitMate"
 Bundle "ervandew/supertab"
-Bundle "fweep/vim-tabber"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
@@ -37,7 +36,6 @@ Bundle "majutsushi/tagbar"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 Bundle "mileszs/ack.vim"
-Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
@@ -47,11 +45,12 @@ Bundle "szw/moloterm"
 Bundle "szw/rope-vim"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-g"
+Bundle "szw/vim-indent-object"
 Bundle "szw/vim-kompleter"
 Bundle "szw/vim-maximizer"
-Bundle "szw/vim-next-bufferlist"
 Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
+Bundle "szw/vim-tab-friends"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
 Bundle "szw/xmledit"
@@ -129,9 +128,6 @@ inoremap <silent><F11> <C-[>:tabe<CR>
 " Toggle wrapping
 noremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
 
-" Colors
-colorscheme moloterm
-
 " Encoding
 set fileencoding=utf-8
 " set fileencodings=utf-8
@@ -154,10 +150,14 @@ endif
 
 " Custom language settings
 syntax on
+" syntax enable
 filetype on
 filetype plugin on
 filetype indent on
 runtime macros/matchit.vim
+
+" Colors
+colorscheme moloterm
 
 " Remove trailing spaces
 au BufWritePre * :%s/\s\+$//e
@@ -275,13 +275,3 @@ let g:maximizer_set_mapping_with_bang = 1
 
 " Vim-Fugitive
 nnoremap <silent><F4> :Gstatus<CR>
-
-" Vim-NextBufferList
-let g:next_bufferlist_max_height = 25
-
-" Tabber
-set tabline=%!tabber#TabLine()
-let g:tabber_divider_style = 'compatible'
-let g:tabber_prompt_for_new_label = 1
-let g:tabber_wrap_when_shifting = 1
-nnoremap <silent><F12> :TabberLabel<CR>
