@@ -43,7 +43,6 @@ Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "sickill/vim-pasta"
 Bundle "szw/moloterm"
-Bundle "szw/rope-vim"
 Bundle "szw/vim-commentary"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-g"
@@ -71,8 +70,6 @@ Bundle "tpope/vim-sleuth"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-ruby/vim-ruby"
-Bundle "vim-scripts/Tabmerge"
-Bundle "vim-scripts/indentpython.vim"
 
 " Swap/backup files
 set noswapfile
@@ -171,8 +168,6 @@ nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
 augroup PHP
   au!
-  " au BufNewFile,BufRead *.src set filetype=php
-  " au BufNewFile,BufRead *.inc set filetype=php
   au FileType php setlocal omnifunc=phpcomplete#CompletePHP
   au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
   " au FileType php,html filetype indent off
@@ -191,7 +186,6 @@ augroup END
 augroup Python
   au!
   au FileType python setlocal omnifunc=pythoncomplete#Complete
-  " au FileType python setlocal completefunc=RopeCompleteFunc
   au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
   au FileType python setlocal completeopt-=preview "turn off the preview window
 augroup END
@@ -250,13 +244,7 @@ au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
 " NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
 nmap <silent><F6> :NERDTreeFind<CR>
-
-" Ropevim
-let ropevim_vim_completion = 1
-let ropevim_extended_complete = 1
-let ropevim_guess_project = 1
-let g:ropevim_autoimport_modules = ["os.*", "traceback", "django.*", "xml.etree"]
-" imap <Nul> <C-R>=RopeCodeAssistInsertMode()<CR>
+let g:NERDTreeWinSize = 40
 
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
