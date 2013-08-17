@@ -32,7 +32,7 @@ Bundle "kana/vim-textobj-line"
 Bundle "kana/vim-textobj-user"
 Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
-Bundle "lambdalisue/vim-django-support"
+Bundle "kshenoy/vim-signature"
 Bundle "majutsushi/tagbar"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
@@ -51,7 +51,7 @@ Bundle "szw/vim-kompleter"
 Bundle "szw/vim-maximizer"
 Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
-Bundle "szw/vim-tab-friends"
+Bundle "szw/vim-tabb"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
 Bundle "szw/xmledit"
@@ -250,6 +250,9 @@ let g:NERDTreeWinSize = 40
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = '\v(tmp|temp)[\/]'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_mruf_relative = 1
 
 " Syntastic
 let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
@@ -265,3 +268,8 @@ let g:maximizer_set_mapping_with_bang = 1
 
 " Vim-Fugitive
 nnoremap <silent><F4> :Gstatus<CR>
+
+" Tabb
+let g:tabb_max_height = 45
+hi TabbBufferSelected term=reverse ctermfg=white ctermbg=black cterm=bold
+hi TabbBufferNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
