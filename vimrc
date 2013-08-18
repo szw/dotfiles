@@ -270,6 +270,5 @@ let g:maximizer_set_mapping_with_bang = 1
 nnoremap <silent><F4> :Gstatus<CR>
 
 " Tabb
-let g:tabb_max_height = 45
 hi TabbBufferSelected term=reverse ctermfg=white ctermbg=black cterm=bold
 hi TabbBufferNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
