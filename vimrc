@@ -164,6 +164,9 @@ au BufWritePre * :%s/\s\+$//e
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
+" Lispy identifiers support
+au FileType lisp,clojure,html,xml,xhtml,haml,eruby,css,scss,sass,javascript,coffee setlocal isk+=-
+
 " Custom filetype settings
 
 augroup PHP
