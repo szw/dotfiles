@@ -22,7 +22,6 @@ call vundle#rc()
 
 Bundle "Lokaltog/vim-easymotion"
 Bundle "Raimondi/delimitMate"
-Bundle "ervandew/supertab"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
@@ -70,6 +69,8 @@ Bundle "tpope/vim-sleuth"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-ruby/vim-ruby"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-notes"
 
 " Swap/backup files
 set noswapfile
@@ -123,6 +124,26 @@ set pastetoggle=<F5>
 " New tab
 noremap <silent><F11> :tabe<CR>
 inoremap <silent><F11> <C-[>:tabe<CR>
+
+" Tabs
+noremap <silent><Leader>1 1gt
+noremap <silent><Leader>2 2gt
+noremap <silent><Leader>3 3gt
+noremap <silent><Leader>4 4gt
+noremap <silent><Leader>5 5gt
+noremap <silent><Leader>6 6gt
+noremap <silent><Leader>7 7gt
+noremap <silent><Leader>8 8gt
+noremap <silent><Leader>9 9gt
+noremap <silent><Leader>0 10gt
+
+" Saving
+nnoremap <silent><C-s> :w<CR>
+inoremap <silent><C-s> <C-[>:w<CR>
+vnoremap <silent><C-s> <C-[>:w<CR>gv
+
+" Quit
+nnoremap <silent><Leader>q :qa!<CR>
 
 " Toggle wrapping
 noremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
@@ -238,9 +259,6 @@ augroup END
 
 " Custom plugins settings
 
-" SuperTab
-let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
-
 " delimitMate
 au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
 
@@ -275,3 +293,9 @@ nnoremap <silent><F4> :Gstatus<CR>
 " Tabb
 hi TabbBufferSelected term=reverse ctermfg=white ctermbg=black cterm=bold
 hi TabbBufferNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
+
+" Notes
+let g:notes_directories = ['~/Dropbox/Notes']
+let g:notes_suffix = '.txt'
+let g:notes_smart_quotes = 1
+let g:notes_alt_indents = 0
