@@ -13,6 +13,7 @@ set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
+set nostartofline
 
 " Vundle
 filetype off
@@ -22,38 +23,40 @@ call vundle#rc()
 
 Bundle "Lokaltog/vim-easymotion"
 Bundle "Raimondi/delimitMate"
+Bundle "ervandew/supertab"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
+Bundle "junegunn/seoul256.vim"
+Bundle "junegunn/vim-easy-align"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-lastpat"
 Bundle "kana/vim-textobj-line"
 Bundle "kana/vim-textobj-user"
 Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
 Bundle "kshenoy/vim-signature"
 Bundle "majutsushi/tagbar"
 Bundle "mattn/gist-vim"
 Bundle "mattn/webapi-vim"
 Bundle "mileszs/ack.vim"
+Bundle "nelstrom/vim-markdown-folding"
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "sickill/vim-pasta"
-Bundle "szw/moloterm"
+Bundle "szw/taskpaper.vim"
 Bundle "szw/vim-commentary"
 Bundle "szw/vim-dict"
+Bundle "szw/vim-f2"
 Bundle "szw/vim-g"
 Bundle "szw/vim-indent-object"
 Bundle "szw/vim-kompleter"
 Bundle "szw/vim-maximizer"
 Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
-Bundle "szw/vim-tabb"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
-Bundle "szw/xmledit"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-abolish"
 Bundle "tpope/vim-characterize"
@@ -69,8 +72,6 @@ Bundle "tpope/vim-sleuth"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-ruby/vim-ruby"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-notes"
 
 " Swap/backup files
 set noswapfile
@@ -116,26 +117,36 @@ endif
 
 " Folding
 set foldmethod=indent
-set foldlevelstart=20
+set foldlevelstart=99
+
+nnoremap <silent><Leader>f :if &fdm == "indent" <bar> setl fdm=marker <bar> else <bar> setl fdm=indent <bar> endif<CR>
+
+" autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
+
+" autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+" autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 " Paste mode
 set pastetoggle=<F5>
 
+" Jumps
+nnoremap <silent><S-TAB> <C-o>
+
 " New tab
-noremap <silent><F11> :tabe<CR>
+nnoremap <silent><F11> :tabe<CR>
 inoremap <silent><F11> <C-[>:tabe<CR>
 
 " Tabs
-noremap <silent><Leader>1 1gt
-noremap <silent><Leader>2 2gt
-noremap <silent><Leader>3 3gt
-noremap <silent><Leader>4 4gt
-noremap <silent><Leader>5 5gt
-noremap <silent><Leader>6 6gt
-noremap <silent><Leader>7 7gt
-noremap <silent><Leader>8 8gt
-noremap <silent><Leader>9 9gt
-noremap <silent><Leader>0 10gt
+nnoremap <silent><Leader>1 1gt
+nnoremap <silent><Leader>2 2gt
+nnoremap <silent><Leader>3 3gt
+nnoremap <silent><Leader>4 4gt
+nnoremap <silent><Leader>5 5gt
+nnoremap <silent><Leader>6 6gt
+nnoremap <silent><Leader>7 7gt
+nnoremap <silent><Leader>8 8gt
+nnoremap <silent><Leader>9 9gt
+nnoremap <silent><Leader>0 10gt
 
 " Saving
 nnoremap <silent><C-s> :w<CR>
@@ -146,7 +157,7 @@ vnoremap <silent><C-s> <C-[>:w<CR>gv
 nnoremap <silent><Leader>q :qa!<CR>
 
 " Toggle wrapping
-noremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
+nnoremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
 
 " Encoding
 set fileencoding=utf-8
@@ -177,16 +188,24 @@ filetype indent on
 runtime macros/matchit.vim
 
 " Colors
-colorscheme moloterm
+let g:seoul256_background = 233
+colorscheme seoul256
+hi nontext ctermfg=bg guifg=bg cterm=NONE gui=NONE
 
 " Remove trailing spaces
-au BufWritePre * :%s/\s\+$//e
+augroup TrailingSpaces
+  au!
+  au BufWritePre * if &ft != "markdown" | %s/\s\+$//e | endif
+augroup END
 
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Lispy identifiers support
-au FileType lisp,clojure,html,xml,xhtml,haml,eruby,css,scss,sass,javascript,coffee setlocal isk+=-
+augroup LispyIdentifiers
+  au!
+  au FileType lisp,clojure,html,xml,xhtml,haml,eruby,css,scss,sass,javascript,coffee setlocal isk+=-
+augroup END
 
 " Custom filetype settings
 
@@ -246,6 +265,7 @@ augroup Xml
 augroup END
 
 augroup Yaml
+  au!
   au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
@@ -253,27 +273,27 @@ augroup Text
   au!
   au FileType text,markdown setlocal textwidth=100 formatoptions+=1
   au FileType text,markdown,gitcommit setlocal complete+=k infercase
+
   " Support for the Markdown Viewer: https://github.com/szw/md
   au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
+  au FileType markdown nnoremap <silent><buffer><F1> :Md<CR>
+  au FileType markdown setlocal foldlevel=0
 augroup END
 
 " Custom plugins settings
 
 " delimitMate
-au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
+augroup DelimitMateSettings
+  au!
+  au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
+augroup END
 
 " NERDTree
 nmap <silent><F7> :NERDTreeToggle<CR>
 nmap <silent><F6> :NERDTreeFind<CR>
 let g:NERDTreeWinSize = 40
-
-" CtrlP
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_extensions = ['tag']
-let g:ctrlp_custom_ignore = '\v(tmp|temp)[\/]'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_open_multiple_files = 'i'
-let g:ctrlp_mruf_relative = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeQuitOnOpen = 1
 
 " Syntastic
 let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
@@ -290,12 +310,20 @@ let g:maximizer_set_mapping_with_bang = 1
 " Vim-Fugitive
 nnoremap <silent><F4> :Gstatus<CR>
 
-" Tabb
-hi TabbBufferSelected term=reverse ctermfg=white ctermbg=black cterm=bold
-hi TabbBufferNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
+" F2
+" hi F2ItemSelected term=reverse ctermfg=white ctermbg=black cterm=bold
+" hi F2ItemNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
+" hi F2ItemFound ctermfg=125 ctermbg=NONE cterm=bold
 
-" Notes
-let g:notes_directories = ['~/Dropbox/Notes']
-let g:notes_suffix = '.txt'
-let g:notes_smart_quotes = 1
-let g:notes_alt_indents = 0
+" hi F2ItemSelected term=reverse ctermfg=252 ctermbg=89 cterm=bold
+" hi F2ItemNormal term=NONE ctermfg=234 ctermbg=224 cterm=NONE
+
+hi F2ItemSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
+hi F2ItemNormal   term=NONE    ctermfg=245  ctermbg=232 cterm=NONE
+hi F2ItemFound    ctermfg=220  ctermbg=NONE cterm=bold
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
+
+" easy-align
+vnoremap <silent> <Enter> :EasyAlign<Enter>
