@@ -36,8 +36,6 @@ Bundle "kana/vim-textobj-user"
 Bundle "kchmck/vim-coffee-script"
 Bundle "kshenoy/vim-signature"
 Bundle "majutsushi/tagbar"
-Bundle "mattn/gist-vim"
-Bundle "mattn/webapi-vim"
 Bundle "mileszs/ack.vim"
 Bundle "nelstrom/vim-markdown-folding"
 Bundle "pangloss/vim-javascript"
@@ -45,7 +43,6 @@ Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "sickill/vim-pasta"
-Bundle "szw/taskpaper.vim"
 Bundle "szw/vim-commentary"
 Bundle "szw/vim-dict"
 Bundle "szw/vim-f2"
@@ -319,7 +316,8 @@ nnoremap <silent><F4> :Gstatus<CR>
 " hi F2ItemNormal term=NONE ctermfg=234 ctermbg=224 cterm=NONE
 
 hi F2ItemSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
-hi F2ItemNormal   term=NONE    ctermfg=245  ctermbg=232 cterm=NONE
+" hi F2ItemNormal   term=NONE    ctermfg=245  ctermbg=233 cterm=NONE
+hi F2ItemNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
 hi F2ItemFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 " SuperTab
@@ -327,3 +325,6 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 " easy-align
 vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+" vim-pasta
+let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
