@@ -198,6 +198,9 @@ augroup END
 " Mute highlight search
 nnoremap <silent><C-l> :<C-u>nohlsearch<CR><C-l>
 
+" super E
+command! -nargs=1 -range E exe "e " . fnamemodify(resolve(expand("%:p")), ':h') . "/<args>"
+
 " Lispy identifiers support
 augroup LispyIdentifiers
   au!
@@ -221,6 +224,7 @@ augroup Ruby
   au FileType ruby,eruby,haml let g:rubycomplete_rails = 1
   au FileType ruby,eruby,haml let g:rubycomplete_classes_in_global = 1
   au FileType ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType ruby setlocal isk-=-
 augroup END
 
 augroup Python
@@ -228,11 +232,13 @@ augroup Python
   au FileType python setlocal omnifunc=pythoncomplete#Complete
   au FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
   au FileType python setlocal completeopt-=preview "turn off the preview window
+  au FileType python setlocal isk-=-
 augroup END
 
 augroup Vimscript
   au!
   au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType vim setlocal isk-=-
 augroup END
 
 augroup Javascript
@@ -270,6 +276,7 @@ augroup Text
   au!
   au FileType text,markdown setlocal textwidth=100 formatoptions+=1
   au FileType text,markdown,gitcommit setlocal complete+=k infercase
+  au FileType text,markdown,gitcommit setlocal isk-=-
 
   " Support for the Markdown Viewer: https://github.com/szw/md
   au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
@@ -325,6 +332,21 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 " easy-align
 vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+function! s:easy_align_1st_eq(type, ...)
+  '[,']EasyAlign=
+endfunction
+nnoremap <Leader>= :set opfunc=<SID>easy_align_1st_eq<Enter>g@
+
+function! s:easy_align_1st_colon(type, ...)
+  '[,']EasyAlign:
+endfunction
+nnoremap <Leader>: :set opfunc=<SID>easy_align_1st_colon<Enter>g@
+
+function! s:easy_align_comma(type, ...)
+  '[,']EasyAlign*,
+endfunction
+nnoremap <Leader>, :set opfunc=<SID>easy_align_comma<Enter>g@
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
