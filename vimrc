@@ -13,6 +13,7 @@ set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
+set statusline=%<%f\ %y%m%r%=%-14.(%l,%c%V%)\ %P
 set nostartofline
 
 " Vundle
@@ -27,7 +28,7 @@ Bundle "ervandew/supertab"
 Bundle "glts/vim-textobj-comment"
 Bundle "gmarik/vundle"
 Bundle "jgdavey/vim-blockle"
-Bundle "junegunn/seoul256.vim"
+Bundle "szw/seoul256.vim"
 Bundle "junegunn/vim-easy-align"
 Bundle "kana/vim-textobj-entire"
 Bundle "kana/vim-textobj-lastpat"
@@ -39,7 +40,6 @@ Bundle "majutsushi/tagbar"
 Bundle "mileszs/ack.vim"
 Bundle "nelstrom/vim-markdown-folding"
 Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "sickill/vim-pasta"
@@ -50,7 +50,6 @@ Bundle "szw/vim-g"
 Bundle "szw/vim-indent-object"
 Bundle "szw/vim-kompleter"
 Bundle "szw/vim-maximizer"
-Bundle "szw/vim-powerline"
 Bundle "szw/vim-smartclose"
 Bundle "szw/vim-tags"
 Bundle "szw/vim-testrunner"
@@ -129,11 +128,10 @@ set pastetoggle=<F5>
 " Jumps
 nnoremap <silent><S-TAB> <C-o>
 
-" New tab
+" Tabs
 nnoremap <silent><F11> :tabe<CR>
 inoremap <silent><F11> <C-[>:tabe<CR>
 
-" Tabs
 nnoremap <silent><Leader>1 1gt
 nnoremap <silent><Leader>2 2gt
 nnoremap <silent><Leader>3 3gt
@@ -145,6 +143,9 @@ nnoremap <silent><Leader>8 8gt
 nnoremap <silent><Leader>9 9gt
 nnoremap <silent><Leader>0 10gt
 
+nnoremap <silent>+ :tabm+1<CR>
+nnoremap <silent>- :tabm-1<CR>
+
 " Saving
 nnoremap <silent><C-s> :w<CR>
 inoremap <silent><C-s> <C-[>:w<CR>
@@ -155,6 +156,12 @@ nnoremap <silent><Leader>q :qa!<CR>
 
 " Toggle wrapping
 nnoremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
+
+" Insert mode with indent
+nnoremap <silent>i @=empty(getline(".")) ? "S" : "i"<CR>
+nnoremap <silent>I @=empty(getline(".")) ? "S" : "I"<CR>
+nnoremap <silent>a @=empty(getline(".")) ? "S" : "a"<CR>
+nnoremap <silent>A @=empty(getline(".")) ? "S" : "A"<CR>
 
 " Encoding
 set fileencoding=utf-8
@@ -187,6 +194,7 @@ runtime macros/matchit.vim
 " Colors
 let g:seoul256_background = 233
 colorscheme seoul256
+set background=dark
 hi nontext ctermfg=bg guifg=bg cterm=NONE gui=NONE
 
 " Remove trailing spaces
@@ -291,13 +299,6 @@ augroup DelimitMateSettings
   au!
   au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
 augroup END
-
-" NERDTree
-nmap <silent><F7> :NERDTreeToggle<CR>
-nmap <silent><F6> :NERDTreeFind<CR>
-let g:NERDTreeWinSize = 40
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeQuitOnOpen = 1
 
 " Syntastic
 let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
