@@ -14,6 +14,7 @@ set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
 set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%-7.(%l,%c%V%)\ %P
+set showtabline=0
 set nostartofline
 set noautochdir
 
@@ -294,27 +295,31 @@ hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
 " hi CtrlSpaceNormal   term=NONE    ctermfg=245  ctermbg=233 cterm=NONE
 hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
 hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
-let g:ctrlspace_use_mouse_and_arrows = 0
+" let g:ctrlspace_unicode_font = 0
+" let g:ctrlspace_use_ruby_bindings = 0
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 " easy-align
-vnoremap <silent> <Enter> :EasyAlign<Enter>
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+" easy-align
+" vnoremap <silent> <Enter> :EasyAlign<Enter>
 
-function! s:easy_align_1st_eq(type, ...)
-  '[,']EasyAlign=
-endfunction
-nnoremap <Leader>= :set opfunc=<SID>easy_align_1st_eq<Enter>g@
+" function! s:easy_align_1st_eq(type, ...)
+"   '[,']EasyAlign=
+" endfunction
+" nnoremap <Leader>= :set opfunc=<SID>easy_align_1st_eq<Enter>g@
 
-function! s:easy_align_1st_colon(type, ...)
-  '[,']EasyAlign:
-endfunction
-nnoremap <Leader>: :set opfunc=<SID>easy_align_1st_colon<Enter>g@
+" function! s:easy_align_1st_colon(type, ...)
+"   '[,']EasyAlign:
+" endfunction
+" nnoremap <Leader>: :set opfunc=<SID>easy_align_1st_colon<Enter>g@
 
-function! s:easy_align_comma(type, ...)
-  '[,']EasyAlign*,
-endfunction
-nnoremap <Leader>, :set opfunc=<SID>easy_align_comma<Enter>g@
+" function! s:easy_align_comma(type, ...)
+"   '[,']EasyAlign*,
+" endfunction
+" nnoremap <Leader>, :set opfunc=<SID>easy_align_comma<Enter>g@
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
