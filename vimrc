@@ -14,6 +14,7 @@ set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
 set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%-7.(%l,%c%V%)\ %P
+" set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%(\ %{ctrlspace#statusline_tab_info_segment()}%)%=%-7.(%l,%c%V%)\ %P
 set showtabline=0
 set nostartofline
 set noautochdir
@@ -24,51 +25,52 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle "Lokaltog/vim-easymotion"
-Bundle "Raimondi/delimitMate"
-Bundle "ervandew/supertab"
-Bundle "glts/vim-textobj-comment"
-Bundle "gmarik/vundle"
-Bundle "jgdavey/vim-blockle"
-Bundle "junegunn/vim-easy-align"
-Bundle "kana/vim-textobj-entire"
-Bundle "kana/vim-textobj-lastpat"
-Bundle "kana/vim-textobj-line"
-Bundle "kana/vim-textobj-user"
-Bundle "kchmck/vim-coffee-script"
-Bundle "kshenoy/vim-signature"
-Bundle "majutsushi/tagbar"
-Bundle "mileszs/ack.vim"
-Bundle "nelstrom/vim-markdown-folding"
-Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/syntastic"
-Bundle "shawncplus/phpcomplete.vim"
-Bundle "sickill/vim-pasta"
-Bundle "szw/seoul256.vim"
-Bundle "szw/vim-commentary"
-Bundle "szw/vim-ctrlspace"
-Bundle "szw/vim-dict"
-Bundle "szw/vim-g"
-Bundle "szw/vim-indent-object"
-Bundle "szw/vim-kompleter"
-Bundle "szw/vim-maximizer"
-Bundle "szw/vim-smartclose"
-Bundle "szw/vim-tags"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-characterize"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-sleuth"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-unimpaired"
-Bundle "vim-ruby/vim-ruby"
+Plugin 'gmarik/vundle'
+
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Raimondi/delimitMate'
+Plugin 'ervandew/supertab'
+Plugin 'glts/vim-textobj-comment'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-lastpat'
+Plugin 'kana/vim-textobj-line'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kshenoy/vim-signature'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'sickill/vim-pasta'
+Plugin 'szw/seoul256.vim'
+Plugin 'szw/vim-commentary'
+Plugin 'szw/vim-ctrlspace'
+Plugin 'szw/vim-dict'
+Plugin 'szw/vim-g'
+Plugin 'szw/vim-indent-object'
+Plugin 'szw/vim-kompleter'
+Plugin 'szw/vim-maximizer'
+Plugin 'szw/vim-smartclose'
+Plugin 'szw/vim-tags'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
 
 " Swap/backup files
 set noswapfile
@@ -269,7 +271,7 @@ augroup DelimitMateSettings
 augroup END
 
 " Syntastic
-let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
+" let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
 
 " Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
@@ -297,6 +299,7 @@ hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
 hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
+" let g:ctrlspace_use_horizontal_splits = 1
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
