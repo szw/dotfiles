@@ -13,8 +13,7 @@ set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
-set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%-7.(%l,%c%V%)\ %P
-" set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%(\ %{ctrlspace#statusline_tab_info_segment()}%)%=%-7.(%l,%c%V%)\ %P
+set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%-3.(%l,%c%V%)\ %P
 set showtabline=0
 set nostartofline
 set noautochdir
@@ -286,17 +285,11 @@ let g:maximizer_set_mapping_with_bang = 1
 nnoremap <silent><F12> :Gstatus<CR>
 
 " CtrlSpace
-" hi CtrlSpaceSelected term=reverse ctermfg=white ctermbg=black cterm=bold
-" hi CtrlSpaceNormal term=NONE ctermfg=black ctermbg=228 cterm=NONE
-" hi CtrlSpaceFound ctermfg=125 ctermbg=NONE cterm=bold
-
-" hi CtrlSpaceSelected term=reverse ctermfg=252 ctermbg=89 cterm=bold
-" hi CtrlSpaceNormal term=NONE ctermfg=234 ctermbg=224 cterm=NONE
-
 hi CtrlSpaceSelected term=reverse ctermfg=187  ctermbg=23  cterm=bold
-" hi CtrlSpaceNormal   term=NONE    ctermfg=245  ctermbg=233 cterm=NONE
 hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=232 cterm=NONE
 hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
+hi CtrlSpaceStatus   ctermfg=230  ctermbg=234  cterm=NONE
+
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
 " let g:ctrlspace_use_horizontal_splits = 1
