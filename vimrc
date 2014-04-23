@@ -26,6 +26,8 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'fatih/vim-go'
+
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
@@ -211,6 +213,12 @@ augroup Python
   au FileType python setlocal isk-=-
 augroup END
 
+augroup Go
+  au!
+  au FileType go setlocal completeopt-=preview "turn off the preview window
+  au FileType go setlocal isk-=-
+augroup END
+
 augroup Vimscript
   au!
   au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -277,6 +285,34 @@ let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl
 
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " Maximizer
 let g:maximizer_set_mapping_with_bang = 1

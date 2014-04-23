@@ -135,6 +135,8 @@ if [ $(uname -s) = "Darwin" ]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOPATH/bin
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
