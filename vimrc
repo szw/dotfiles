@@ -26,11 +26,10 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 
-Plugin 'fatih/vim-go'
-
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
+Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
