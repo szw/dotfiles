@@ -1,3 +1,4 @@
+--ignore-case
 --type-set=coffee=.coffee
 --type-set=haml=.haml
 --type-set=sass=.sass

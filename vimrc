@@ -323,35 +323,20 @@ nnoremap <silent><F12> :Gstatus<CR>
 " CtrlSpace
 hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
 hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
-hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
+hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
 hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
 
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
 " let g:ctrlspace_use_horizontal_splits = 1
+" let g:ctrlspace_max_files = 0
+" let g:ctrlspace_max_search_results = 200
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
 " easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
-" easy-align
-" vnoremap <silent> <Enter> :EasyAlign<Enter>
-
-" function! s:easy_align_1st_eq(type, ...)
-"   '[,']EasyAlign=
-" endfunction
-" nnoremap <Leader>= :set opfunc=<SID>easy_align_1st_eq<Enter>g@
-
-" function! s:easy_align_1st_colon(type, ...)
-"   '[,']EasyAlign:
-" endfunction
-" nnoremap <Leader>: :set opfunc=<SID>easy_align_1st_colon<Enter>g@
-
-" function! s:easy_align_comma(type, ...)
-"   '[,']EasyAlign*,
-" endfunction
-" nnoremap <Leader>, :set opfunc=<SID>easy_align_comma<Enter>g@
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
