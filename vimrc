@@ -72,6 +72,7 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/indenthtml.vim'
 
 " Swap/backup files
 set noswapfile
@@ -126,6 +127,9 @@ set pastetoggle=<F5>
 
 " Jumps
 nnoremap <silent><S-TAB> <C-o>
+
+" List contents of all registers (that typically contain pasteable text).
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<CR>
 
 " Toggle wrapping
 nnoremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
@@ -340,3 +344,8 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
+
+" indenthtml
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+let g:html_indent_inctags = "html,body,head,tbody"
