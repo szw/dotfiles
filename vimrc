@@ -21,15 +21,15 @@ set noautochdir
 " Vundle
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -74,6 +74,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
 
+call vundle#end()
 " Swap/backup files
 set noswapfile
 set dir=/tmp
@@ -335,6 +336,8 @@ hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cter
 " let g:ctrlspace_use_horizontal_splits = 1
 " let g:ctrlspace_max_files = 0
 " let g:ctrlspace_max_search_results = 200
+" let g:ctrlspace_save_workspace_on_exit = 1
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
