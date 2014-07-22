@@ -25,11 +25,12 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-rvm'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ervandew/supertab'
-" Plugin 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -208,6 +209,7 @@ augroup Ruby
   au FileType ruby,eruby,haml let g:rubycomplete_classes_in_global = 1
   au FileType ruby,eruby,haml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
   au FileType ruby setlocal isk-=-
+  au FileType ruby,eruby,haml Rvm
 augroup END
 
 augroup Python
