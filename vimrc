@@ -75,6 +75,8 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
 
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 " Swap/backup files
 set noswapfile
@@ -171,10 +173,18 @@ filetype indent on
 runtime macros/matchit.vim
 
 " Colors
-let g:seoul256_background = 233
-colorscheme seoul256
-set background=dark
-hi nontext ctermfg=bg guifg=bg cterm=NONE gui=NONE
+if has("gui_running")
+  syntax enable
+  set background=dark
+  colorscheme solarized
+  hi SignColumn guibg=#022B35
+  hi NonText guifg=#022B35 gui=NONE
+else
+  let g:seoul256_background = 233
+  colorscheme seoul256
+  set background=dark
+  hi NonText ctermfg=bg guifg=bg cterm=NONE gui=NONE
+endif
 
 " Remove trailing spaces
 augroup TrailingSpaces
@@ -328,10 +338,17 @@ let g:maximizer_set_mapping_with_bang = 1
 nnoremap <silent><F12> :Gstatus<CR>
 
 " CtrlSpace
-hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
-hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
-hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
-hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
+if has("gui_running")
+  hi CtrlSpaceSelected guifg=#021B25 guibg=#93A1A1 gui=bold
+  hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 gui=NONE
+  hi CtrlSpaceSearch   guifg=#9b1b06 guibg=NONE gui=bold
+  hi CtrlSpaceStatus   guifg=#000000 guibg=#667B83 gui=NONE
+else
+  hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
+  hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
+  hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
+  hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
+endif
 
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
@@ -339,6 +356,8 @@ hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cter
 " let g:ctrlspace_max_files = 0
 " let g:ctrlspace_max_search_results = 200
 " let g:ctrlspace_save_workspace_on_exit = 1
+let g:ctrlspace_event_change_active_favorite = ":TagsGenerate"
+let g:ctrlspace_use_horizontal_splits = 1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
