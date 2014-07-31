@@ -4,7 +4,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=e
-set lines=86 columns=150
+set lines=86 columns=165
 set vb
 
 " Vim-CtrlSpace
@@ -20,9 +20,8 @@ let g:ctrlspace_symbols = {
       \ "prv"     : "⌕",
       \ "s_left"  : "›",
       \ "s_right" : "‹",
-      \ "favs"    : "♡"
+      \ "bm"      : "♡"
       \ }
 
 " Vim-Tags
-let g:vim_tags_use_vim_dispatch = 0
 let g:vim_tags_ctags_binary = "/usr/local/bin/ctags"

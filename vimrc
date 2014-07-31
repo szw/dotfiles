@@ -25,10 +25,10 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-rvm'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
@@ -69,13 +69,12 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rvm'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
-
-Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 " Swap/backup files
@@ -356,7 +355,6 @@ endif
 " let g:ctrlspace_max_files = 0
 " let g:ctrlspace_max_search_results = 200
 " let g:ctrlspace_save_workspace_on_exit = 1
-let g:ctrlspace_event_change_active_favorite = ":TagsGenerate"
 let g:ctrlspace_use_horizontal_splits = 1
 
 " SuperTab
