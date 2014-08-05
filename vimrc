@@ -188,7 +188,7 @@ endif
 " Remove trailing spaces
 augroup TrailingSpaces
   au!
-  au BufWritePre * if &ft != "markdown" | %s/\s\+$//e | endif
+  au BufWritePre * if &ft != "markdown" | let b:cpos = [line("."), col(".")] | %s/\s\+$//e | call cursor(b:cpos) | endif
 augroup END
 
 " Mute highlight search
@@ -355,7 +355,7 @@ endif
 " let g:ctrlspace_max_files = 0
 " let g:ctrlspace_max_search_results = 200
 " let g:ctrlspace_save_workspace_on_exit = 1
-let g:ctrlspace_use_horizontal_splits = 1
+" let g:ctrlspace_use_horizontal_splits = 1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
