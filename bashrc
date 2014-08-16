@@ -157,3 +157,5 @@ export JRUBY_OPTS="--1.9"
 #     screen-color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
 #     screen-256color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
 # esac
+
+export MC_SKIN=$HOME/.mc/solarized.ini

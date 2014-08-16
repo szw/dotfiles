@@ -41,9 +41,9 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
-Plugin 'mileszs/ack.vim'
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'pangloss/vim-javascript'
+Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
@@ -58,6 +58,7 @@ Plugin 'szw/vim-kompleter'
 Plugin 'szw/vim-maximizer'
 Plugin 'szw/vim-smartclose'
 Plugin 'szw/vim-tags'
+Plugin 'terryma/vim-expand-region'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-characterize'
@@ -349,6 +350,10 @@ else
   hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
 endif
 
+if executable("ag")
+  let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
+endif
+
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
 " let g:ctrlspace_use_horizontal_splits = 1
@@ -356,6 +361,8 @@ endif
 " let g:ctrlspace_max_search_results = 200
 " let g:ctrlspace_save_workspace_on_exit = 1
 " let g:ctrlspace_use_horizontal_splits = 1
+" let g:ctrlspace_load_last_workspace_on_start = 1
+" let g:ctrlspace_use_mouse_and_arrows_in_term = 1
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
@@ -371,3 +378,12 @@ let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 let g:html_indent_inctags = "html,body,head,tbody"
+
+" expand_region
+call expand_region#custom_text_objects({
+      \ 'a]' :1,
+      \ 'ab' :1,
+      \ 'aB' :1,
+      \ 'ii' :0,
+      \ 'ai' :0,
+      \ })
