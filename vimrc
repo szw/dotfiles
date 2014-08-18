@@ -387,3 +387,8 @@ call expand_region#custom_text_objects({
       \ 'ii' :0,
       \ 'ai' :0,
       \ })
+
+call expand_region#custom_text_objects('ruby', {
+      \ 'im' :0,
+      \ 'am' :0,
+      \ })
