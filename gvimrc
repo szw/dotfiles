@@ -7,7 +7,7 @@ set guioptions-=e
 set lines=43 columns=120
 set vb
 
-Vim-CtrlSpace
+" Vim-CtrlSpace
 let g:ctrlspace_symbols = {
       \ "cs":      "⌗",
       \ "tab":     "⊙",
