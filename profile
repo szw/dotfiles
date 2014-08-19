@@ -20,3 +20,7 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# Fix MacVim issue with E806: using Float as a String
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
