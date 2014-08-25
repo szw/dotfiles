@@ -48,7 +48,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'sickill/vim-pasta'
-Plugin 'szw/seoul256.vim'
 Plugin 'szw/vim-commentary'
 Plugin 'szw/vim-ctrlspace'
 Plugin 'szw/vim-dict'
@@ -173,18 +172,11 @@ filetype indent on
 runtime macros/matchit.vim
 
 " Colors
-if has("gui_running")
-  syntax enable
-  set background=dark
-  colorscheme solarized
-  hi SignColumn guibg=#022B35
-  hi NonText guifg=#022B35 gui=NONE
-else
-  let g:seoul256_background = 233
-  colorscheme seoul256
-  set background=dark
-  hi NonText ctermfg=bg guifg=bg cterm=NONE gui=NONE
-endif
+syntax enable
+set background=dark
+colorscheme solarized
+hi SignColumn guibg=#022B35 ctermbg=bg
+hi NonText guifg=#022B35 gui=NONE ctermfg=bg cterm=NONE
 
 " Remove trailing spaces
 augroup TrailingSpaces
@@ -288,18 +280,22 @@ augroup END
 
 " Custom plugins settings
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimitMate
 augroup DelimitMateSettings
   au!
   au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
 augroup END
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 " let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
 
@@ -331,24 +327,37 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maximizer
 let g:maximizer_set_mapping_with_bang = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-Fugitive
 nnoremap <silent><F12> :Gstatus<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlSpace
-if has("gui_running")
-  hi CtrlSpaceSelected guifg=#021B25 guibg=#93A1A1 gui=bold
-  hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 gui=NONE
-  hi CtrlSpaceSearch   guifg=#9b1b06 guibg=NONE gui=bold
-  hi CtrlSpaceStatus   guifg=#000000 guibg=#667B83 gui=NONE
-else
-  hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
-  hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
-  hi CtrlSpaceSearch   ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold    gui=bold
-  hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE    gui=NONE
-endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors of CtrlSpace for Solarized Dark
+" (MacVim and Console Vim under iTerm2 with Solarized Dark theme)
+
+" Based on Solarized TablineSel
+hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
+
+" Based on Solarized Tabline/TablineFill
+" original Normal
+" hi CtrlSpaceNormal   guifg=#839496 guibg=#073642 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
+" tweaked Normal with darker background in Gui
+hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
+
+" Based on Title
+hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
+
+" Based on PmenuThumb
+hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=reverse ctermfg=12 ctermbg=8
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if executable("ag")
   let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
@@ -364,21 +373,26 @@ endif
 " let g:ctrlspace_load_last_workspace_on_start = 1
 " let g:ctrlspace_use_mouse_and_arrows_in_term = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indenthtml
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 let g:html_indent_inctags = "html,body,head,tbody"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " expand_region
 call expand_region#custom_text_objects({
       \ 'a]' :1,

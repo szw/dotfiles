@@ -1,4 +1,5 @@
-set guifont=Monaco:h12
+" set guifont=Monaco:h12
+set guifont=MonacoB:h12
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
@@ -23,7 +24,9 @@ let g:ctrlspace_symbols = {
       \ "bm":      "♡",
       \ "help":    "?",
       \ "iv":      "☆",
-      \ "ia":      "★"
+      \ "ia":      "★",
+      \ "im":      "+",
+      \ "dots":    "…"
       \ }
 
 " Vim-Tags
