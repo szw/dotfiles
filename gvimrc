@@ -5,7 +5,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=e
-set lines=43 columns=120
+set lines=86 columns=120
 set vb
 
 " Vim-CtrlSpace

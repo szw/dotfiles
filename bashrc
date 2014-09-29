@@ -159,3 +159,4 @@ export JRUBY_OPTS="--1.9"
 # esac
 
 export MC_SKIN=$HOME/.mc/solarized.ini
+

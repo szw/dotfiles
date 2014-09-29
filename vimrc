@@ -175,8 +175,8 @@ runtime macros/matchit.vim
 syntax enable
 set background=dark
 colorscheme solarized
-hi SignColumn guibg=#022B35 ctermbg=bg
-hi NonText guifg=#022B35 gui=NONE ctermfg=bg cterm=NONE
+silent! hi SignColumn guibg=#022B35 ctermbg=bg
+silent! hi NonText guifg=#022B35 gui=NONE ctermfg=bg cterm=NONE
 
 " Remove trailing spaces
 augroup TrailingSpaces
@@ -365,11 +365,9 @@ endif
 
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
-" let g:ctrlspace_use_horizontal_splits = 1
 " let g:ctrlspace_max_files = 0
 " let g:ctrlspace_max_search_results = 200
 " let g:ctrlspace_save_workspace_on_exit = 1
-" let g:ctrlspace_use_horizontal_splits = 1
 " let g:ctrlspace_load_last_workspace_on_start = 1
 " let g:ctrlspace_use_mouse_and_arrows_in_term = 1
 
