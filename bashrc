@@ -135,8 +135,6 @@ if [ $(uname -s) = "Darwin" ]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
-    export GOPATH=$HOME/go
-    export PATH=$PATH:$GOPATH/bin
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
@@ -158,5 +156,5 @@ export JRUBY_OPTS="--1.9"
 #     screen-256color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
 # esac
 
-export MC_SKIN=$HOME/.mc/solarized.ini
+# export MC_SKIN=$HOME/.mc/solarized.ini
 

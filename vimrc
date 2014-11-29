@@ -30,7 +30,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/vim-easy-align'
@@ -75,7 +74,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
-Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 " Swap/backup files
@@ -406,21 +404,3 @@ call expand_region#custom_text_objects('ruby', {
       \ 'im' :0,
       \ 'am' :0,
       \ })
-
-
-
-" set autochdir
-" let g:ctrlspace_default_mapping_key="<leader>t"
-
-" function! s:setcwd()
-"   if exists("g:SessionLoad") | retu | en
-"   let cph = expand('%:p:h', 1)
-"   if cph =~ '^.\+://' | retu | en
-"   for mkr in ['.git/', '.hg/', '.svn/', '.bzr/', '_darcs/', '.vimprojects']
-"     let wd = call('find'.(mkr =~ '/$' ? 'dir' : 'file'), [mkr, cph.';'])
-"     if wd != '' | let &acd = 0 | brea | en
-"   endfo
-"   exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
-" endfunction
-
-" autocmd BufEnter * call s:setcwd()
