@@ -5,7 +5,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=e
-set lines=86 columns=120
+set lines=86 columns=180
 set vb
 
 " Vim-CtrlSpace
@@ -16,6 +16,7 @@ let g:ctrlspace_symbols = {
       \ "file":    "⊚",
       \ "tabs":    "○ ",
       \ "c_tab":   "● ",
+      \ "ntm":     " ⁺",
       \ "load":    "⋮ → ∙",
       \ "save":    "∙ → ⋮",
       \ "zoom":    "⌕",
