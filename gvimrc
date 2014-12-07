@@ -13,6 +13,7 @@ let g:ctrlspace_symbols = {
       \ "cs":      "⌗",
       \ "tab":     "⊙",
       \ "all":     "∷",
+      \ "vis":     "★",
       \ "file":    "⊚",
       \ "tabs":    "○ ",
       \ "c_tab":   "● ",
