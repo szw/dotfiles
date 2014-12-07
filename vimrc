@@ -406,21 +406,3 @@ call expand_region#custom_text_objects('ruby', {
       \ 'im' :0,
       \ 'am' :0,
       \ })
-
-
-
-" set autochdir
-" let g:ctrlspace_default_mapping_key="<leader>t"
-
-" function! s:setcwd()
-"   if exists("g:SessionLoad") | retu | en
-"   let cph = expand('%:p:h', 1)
-"   if cph =~ '^.\+://' | retu | en
-"   for mkr in ['.git/', '.hg/', '.svn/', '.bzr/', '_darcs/', '.vimprojects']
-"     let wd = call('find'.(mkr =~ '/$' ? 'dir' : 'file'), [mkr, cph.';'])
-"     if wd != '' | let &acd = 0 | brea | en
-"   endfo
-"   exe 'lc!' fnameescape(wd == '' ? cph : substitute(wd, mkr.'$', '.', ''))
-" endfunction
-
-" autocmd BufEnter * call s:setcwd()
