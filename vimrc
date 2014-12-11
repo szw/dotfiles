@@ -13,7 +13,7 @@ set backspace=indent,eol,start
 set shortmess+=I
 set timeout timeoutlen=3000 ttimeoutlen=10
 set laststatus=2
-set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%-3.(%l,%c%V%)\ %P
+set statusline=%<%f%(\ %y%m%r%)%(\ %{fugitive#statusline()}%)%=%(\ %{CtrlSpaceStartWindowIndicator()}\ %)%-3.(%l,%c%V%)\ %P
 set showtabline=0
 set nostartofline
 set noautochdir
@@ -370,6 +370,11 @@ endif
 " let g:ctrlspace_save_workspace_on_switch = 1
 " let g:ctrlspace_load_last_workspace_on_start = 1
 " let g:ctrlspace_use_mouse_and_arrows_in_term = 1
+
+function! CtrlSpaceStartWindowIndicator()
+  return exists("t:ctrlspace_start_window") && t:ctrlspace_start_window == winnr() ? g:ctrlspace_symbols.ia : ""
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SuperTab

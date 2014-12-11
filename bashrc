@@ -9,7 +9,7 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:erasedups
 
-HISTIGNORE='ls:bg:fg:history:tmux -2u:mc:exit'
+HISTIGNORE='ls:bg:fg:history:TMUX_EXECUTABLE=tmux tmux -2u:mc:exit'
 
 # append to the history file, don't overwrite it
 shopt -s histappend
