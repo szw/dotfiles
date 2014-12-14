@@ -374,7 +374,7 @@ endif
 " let g:ctrlspace_use_mouse_and_arrows_in_term = 1
 
 function! CtrlSpaceStartWindowIndicator()
-  return exists("t:ctrlspace_start_window") && t:ctrlspace_start_window == winnr() ? g:ctrlspace_symbols.ia : ""
+  return ctrlspace#bufnr() != -1 && t:ctrlspace_start_window == winnr() ? g:ctrlspace_symbols.ia : ""
 endfunction
 
 
