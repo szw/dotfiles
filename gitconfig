@@ -1,11 +1,11 @@
 [core]
 	editor = vim
 [user]
-	name = Szymon Wrozynski
-	email = szymon@wrozynski.com
+	name = Wojtek Ryrych
+	email = wojtek.ryrych@gmail.com
 [color]
 	ui = auto
 [push]
 	default = simple
 [github]
-	user = szw
+	user = wryrych
