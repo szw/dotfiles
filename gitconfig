@@ -9,3 +9,42 @@
 	default = simple
 [github]
 	user = wryrych
+[alias]
+  cp = cherry-pick
+  st = status
+  cl = clone
+  ci = commit
+  co = checkout
+  br = branch
+  diff = diff --word-diff
+  dc = diff --cached
+  df = diff
+  sortdiff = !sh -c 'git diff "$@" | grep "^[+-]" | sort --key=1.2 | uniq -u -s1
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  who = shortlog -s --
+  aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+  undo=reset --hard
+  tree = log --oneline --decorate --graph
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+  lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+  filelog = log -u
+  fl = log -u
+  dlc = diff --cached HEAD^
+  assume = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  lasttag = describe --tags --abbrev=0
+  lt = describe --tags --abbrev=0
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  sl = stash list
+  sa = stash apply
+  ss = stash save
