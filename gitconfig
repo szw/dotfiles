@@ -48,5 +48,6 @@
   sl = stash list
   sa = stash apply
   ss = stash save
+  pushall = push --recurse-submodules=on-demand
 [merge]
 	tool = opendiff
