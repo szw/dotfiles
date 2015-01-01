@@ -48,3 +48,5 @@
   sl = stash list
   sa = stash apply
   ss = stash save
+[merge]
+	tool = opendiff
