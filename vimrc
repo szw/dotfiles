@@ -29,6 +29,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
@@ -41,6 +42,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'oplatek/Conque-Shell'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
@@ -141,6 +143,9 @@ nnoremap <silent>i @=empty(getline(".")) ? "S" : "i"<CR>
 nnoremap <silent>I @=empty(getline(".")) ? "S" : "I"<CR>
 nnoremap <silent>a @=empty(getline(".")) ? "S" : "a"<CR>
 nnoremap <silent>A @=empty(getline(".")) ? "S" : "A"<CR>
+
+" Insert datetime
+inoremap <silent><F11> <C-r>=strftime("%d-%m-%y %H:%M:%S")<CR>
 
 " Encoding
 set fileencoding=utf-8
@@ -409,3 +414,6 @@ call expand_region#custom_text_objects('ruby', {
       \ 'im' :0,
       \ 'am' :0,
       \ })
+
+" ConqueTerm
+let g:ConqueTerm_ToggleKey      = '<F7>'
