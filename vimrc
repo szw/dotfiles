@@ -418,3 +418,4 @@ call expand_region#custom_text_objects('ruby', {
 
 " ConqueTerm
 let g:ConqueTerm_ToggleKey      = '<F7>'
+nnoremap <silent><F2> :ConqueTerm tmux -2u<CR>
