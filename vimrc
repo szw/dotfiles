@@ -139,6 +139,12 @@ nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<CR>
 " Toggle wrapping
 nnoremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
 
+"Improve window resizing
+nnoremap <silent><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent><Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent><Leader>> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent><Leader>< :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
 " Insert mode with indent
 nnoremap <silent>i @=empty(getline(".")) ? "S" : "i"<CR>
 nnoremap <silent>I @=empty(getline(".")) ? "S" : "I"<CR>
