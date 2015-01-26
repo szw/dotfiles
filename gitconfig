@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+    autocrlf = input
 [user]
 	name = Wojtek Ryrych
 	email = wojtek.ryrych@gmail.com
