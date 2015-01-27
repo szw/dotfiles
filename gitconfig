@@ -13,6 +13,7 @@
 [alias]
   cp = cherry-pick
   st = status
+  s  = status -s
   cl = clone
   ci = commit
   co = checkout
@@ -46,6 +47,7 @@
   rh = reset --hard
   rh1 = reset HEAD^ --hard
   rh2 = reset HEAD^^ --hard
+  unstage = reset HEAD --
   sl = stash list
   sa = stash apply
   ss = stash save
