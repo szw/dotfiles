@@ -10,6 +10,8 @@
 	default = simple
 [pull]
     rebase = true
+[rerere]
+    enabled = true
 [github]
 	user = wryrych
 [alias]
