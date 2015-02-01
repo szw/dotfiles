@@ -1,11 +1,12 @@
 " set guifont=Monaco:h12
-set guifont=MonacoB:h12
+" set guifont=MonacoB:h12
+set guifont=MonacoB:h14
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set guioptions-=e
-set lines=86 columns=180
+set lines=34 columns=136
 set vb
 
 " Vim-CtrlSpace

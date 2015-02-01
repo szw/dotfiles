@@ -374,6 +374,9 @@ if executable("ag")
   let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
 endif
 
+nnoremap <silent><Leader>p :CtrlSpaceGoPrevious<CR>
+nnoremap <silent><Leader>n :CtrlSpaceGoNext<CR>
+
 " let g:ctrlspace_unicode_font = 0
 " let g:ctrlspace_use_ruby_bindings = 0
 " let g:ctrlspace_max_files = 0
