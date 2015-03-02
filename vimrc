@@ -25,6 +25,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
@@ -301,6 +302,10 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 " let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Ruby
+let g:ruby_indent_access_modifier_style = "indent"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dict

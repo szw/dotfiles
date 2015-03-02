@@ -146,7 +146,7 @@ fi
 # export JAVA_OPTS="-XX:+TieredCompilation -client"
 # export JRUBY_OPTS="--1.9 -X-C"
 export JAVA_OPTS="-client"
-export JRUBY_OPTS="--1.9"
+export JRUBY_OPTS="--2.0"
 
 # PROMPT_COMMAND="echo -ne \"\\033]0;\${USER}@${HOSTNAME}\\007\\033k\${PWD}\\033\\\\\"; $PROMPT_COMMAND"
 

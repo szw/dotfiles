@@ -12,7 +12,7 @@ set vb
 " Vim-CtrlSpace
 let g:ctrlspace_symbols = {
       \ "cs":      "⌗",
-      \ "tab":     "⊙",
+      \ "tab":     "∙",
       \ "all":     "∷",
       \ "vis":     "★",
       \ "file":    "⊚",
