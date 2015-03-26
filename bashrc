@@ -120,7 +120,10 @@ fi
 # Turn off XON/XOFF flow control (http://blog.sanctum.geek.nz/terminal-annoyances/)
 stty -ixon
 
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+if [[ $PATH != *"$HOME/.rvm/bin"* ]]; then
+    PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+fi
 
 if [ $(uname -s) = "Darwin" ]; then
     export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
@@ -135,6 +138,12 @@ if [ $(uname -s) = "Darwin" ]; then
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
+
+    export GOPATH=$HOME/go
+
+    if [[ $PATH != *"$GOPATH"* ]]; then
+	export PATH=$PATH:$GOPATH/bin
+    fi
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
@@ -144,7 +153,7 @@ fi
 # export JAVA_OPTS="-XX:+TieredCompilation -client"
 # export JRUBY_OPTS="--1.9 -X-C"
 export JAVA_OPTS="-client"
-export JRUBY_OPTS="--1.9"
+export JRUBY_OPTS="--2.0"
 
 # PROMPT_COMMAND="echo -ne \"\\033]0;\${USER}@${HOSTNAME}\\007\\033k\${PWD}\\033\\\\\"; $PROMPT_COMMAND"
 

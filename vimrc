@@ -28,6 +28,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Raimondi/delimitMate'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
@@ -240,7 +241,7 @@ augroup END
 
 augroup Vimscript
   au!
-  au FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+  au FileType vim setlocal tabstop=4 softtabstop=4 shiftwidth=2 expandtab
   au FileType vim setlocal isk-=-
 augroup END
 
@@ -300,6 +301,10 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 " let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Ruby
+let g:ruby_indent_access_modifier_style = "indent"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dict
@@ -427,3 +432,7 @@ call expand_region#custom_text_objects('ruby', {
 " ConqueTerm
 let g:ConqueTerm_ToggleKey      = '<F7>'
 nnoremap <silent><F2> :ConqueTerm tmux -2u<CR>
+
+" vim-tags
+" turn off autogenerating until bug with hanging process is fixed
+let g:vim_tags_auto_generate = 0
