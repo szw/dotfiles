@@ -9,22 +9,24 @@ set guioptions-=e
 set lines=34 columns=136
 set vb
 
+let $GOPATH = $HOME . "/go"
+
 " Vim-CtrlSpace
 let g:ctrlspace_symbols = {
       \ "cs":      "⌗",
       \ "tab":     "∙",
-      \ "all":     "∷",
+      \ "all":     "፨",
       \ "vis":     "★",
       \ "file":    "⊚",
       \ "tabs":    "○ ",
       \ "c_tab":   "● ",
       \ "ntm":     " ⁺",
-      \ "load":    "⋮ → ∙",
-      \ "save":    "∙ → ⋮",
+      \ "load":    "|∷|",
+      \ "save":    "[∷]",
       \ "zoom":    "⌕",
       \ "s_left":  "›",
       \ "s_right": "‹",
-      \ "bm":      "♡",
+      \ "bm":      "♥",
       \ "help":    "?",
       \ "iv":      "☆",
       \ "ia":      "★",
