@@ -58,3 +58,4 @@
   pushall = push --recurse-submodules=on-demand
 [merge]
 	tool = opendiff
+	conflictstyle = diff3
