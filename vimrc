@@ -77,6 +77,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
+Plugin 'heartsentwined/vim-emblem'
 
 call vundle#end()
 " Swap/backup files
