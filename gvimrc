@@ -34,4 +34,4 @@ let g:ctrlspace_symbols = {
       \ }
 
 " Vim-Tags
-let g:vim_tags_ctags_binary = "/usr/local/bin/ctags"
+let g:vim_tags_ctags_binary = "/usr/bin/ctags"
