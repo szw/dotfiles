@@ -78,6 +78,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
 Plugin 'heartsentwined/vim-emblem'
+Plugin 'mustache/vim-mustache-handlebars'
 
 call vundle#end()
 " Swap/backup files
@@ -350,6 +351,10 @@ let g:maximizer_set_mapping_with_bang = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-Fugitive
 nnoremap <silent><F12> :Gstatus<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Fugitive
+let g:mustache_abbreviations = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlSpace
