@@ -9,7 +9,7 @@ set guioptions-=e
 set lines=34 columns=136
 set vb
 
-let $GOPATH = $HOME . "/go"
+let $GOPATH = $HOME . "/Projects/Go"
 
 " Vim-CtrlSpace
 let g:ctrlspace_symbols = {

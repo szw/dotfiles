@@ -27,7 +27,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
@@ -35,6 +34,7 @@ Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-lastpat'
@@ -392,7 +392,8 @@ nnoremap <silent><Leader>n :CtrlSpaceGoNext<CR>
 " let g:ctrlspace_use_mouse_and_arrows_in_term = 1
 
 function! CtrlSpaceStartWindowIndicator()
-  return ctrlspace#bufnr() != -1 && t:ctrlspace_start_window == winnr() ? g:ctrlspace_symbols.ia : ""
+  return ""
+  " return ctrlspace#bufnr() != -1 && t:ctrlspace_start_window == winnr() ? g:ctrlspace_symbols.ia : ""
 endfunction
 
 

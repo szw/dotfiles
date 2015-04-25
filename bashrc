@@ -139,7 +139,7 @@ if [ $(uname -s) = "Darwin" ]; then
         . `brew --prefix`/etc/bash_completion
     fi
 
-    export GOPATH=$HOME/go
+    export GOPATH=$HOME/Projects/Go
 
     if [[ $PATH != *"$GOPATH"* ]]; then
 	export PATH=$PATH:$GOPATH/bin
