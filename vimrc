@@ -31,7 +31,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'jiangmiao/auto-pairs'
@@ -78,6 +77,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'lukaszkorecki/CoffeeTags'
 
 call vundle#end()
 " Swap/backup files
@@ -350,6 +352,10 @@ let g:maximizer_set_mapping_with_bang = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-Fugitive
 nnoremap <silent><F12> :Gstatus<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Fugitive
+let g:mustache_abbreviations = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlSpace

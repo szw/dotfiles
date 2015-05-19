@@ -1,6 +1,5 @@
-" set guifont=Monaco:h12
 " set guifont=MonacoB:h12
-set guifont=MonacoB:h14
+set guifont=MonacoB:h18
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
@@ -35,4 +34,4 @@ let g:ctrlspace_symbols = {
       \ }
 
 " Vim-Tags
-let g:vim_tags_ctags_binary = "/usr/local/bin/ctags"
+let g:vim_tags_ctags_binary = "/usr/bin/ctags"
