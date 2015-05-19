@@ -22,7 +22,8 @@
   ci = commit
   co = checkout
   br = branch
-  diff = diff --word-diff --color-words
+  diff = diff --word-diff
+  wdiff = diff --color-words
   dc = diff --cached
   df = diff
   sortdiff = !sh -c 'git diff "$@" | grep "^[+-]" | sort --key=1.2 | uniq -u -s1
