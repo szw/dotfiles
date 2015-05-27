@@ -1,6 +1,7 @@
 " set guifont=Monaco:h12
-set guifont=MonacoB:h12
-" set guifont=MonacoB:h14
+" set guifont=MonacoB:h12
+" set guifont=MonacoB2:h17
+set guifont=Inconsolata:h18
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
@@ -14,15 +15,15 @@ let $GOPATH = $HOME . "/Projects/Go"
 " Vim-CtrlSpace
 let g:ctrlspace_symbols = {
       \ "cs":      "⌗",
-      \ "tab":     "∙",
+      \ "tab":     "•",
       \ "all":     "፨",
       \ "vis":     "★",
       \ "file":    "⊚",
       \ "tabs":    "○ ",
       \ "c_tab":   "● ",
       \ "ntm":     " ⁺",
-      \ "load":    "|∷|",
-      \ "save":    "[∷]",
+      \ "load":    "|::|",
+      \ "save":    "[::]",
       \ "zoom":    "⌕",
       \ "s_left":  "›",
       \ "s_right": "‹",

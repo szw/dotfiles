@@ -26,11 +26,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'NLKNguyen/papercolor-theme'
-
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
@@ -187,16 +185,8 @@ runtime macros/matchit.vim
 
 " Colors
 syntax enable
-if has("gui_running")
-  set background=light
-  set t_Co=256
-  colorscheme PaperColor
-else
-  set background=dark
-  colorscheme solarized
-  silent! hi SignColumn guibg=#022B35 ctermbg=bg
-  silent! hi NonText guifg=#022B35 gui=NONE ctermfg=bg cterm=NONE
-endif
+set background=light
+colorscheme PaperColor
 
 " Remove trailing spaces
 augroup TrailingSpaces
@@ -362,40 +352,10 @@ nnoremap <silent><F12> :Gstatus<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlSpace
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if has("gui_running")
-  " PaperColor """"""""""""""""""""""""""""""""""
-  hi link CtrlSpaceSelected PMenuSel
-  hi link CtrlSpaceNormal PMenu
-  hi link CtrlSpaceStatus StatusLine
-  hi CtrlSpaceSearch guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-else
-  " Solarized """"""""""""""""""""""
-  hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
-  hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
-  hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-  hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=reverse ctermfg=12 ctermbg=8
-endif
-
-" Colors of CtrlSpace for Solarized Dark
-" (MacVim and Console Vim under iTerm2 with Solarized Dark theme)
-
-" Based on Solarized TablineSel
-" hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
-
-" Based on Solarized Tabline/TablineFill
-" original Normal
-" hi CtrlSpaceNormal   guifg=#839496 guibg=#073642 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
-" tweaked Normal with darker background in Gui
-" hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
-
-" Based on Title
-" hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-
-" Based on PmenuThumb
-" hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=reverse ctermfg=12 ctermbg=8
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi link CtrlSpaceSelected PMenuSel
+hi link CtrlSpaceNormal PMenu
+hi link CtrlSpaceStatus StatusLine
+hi CtrlSpaceSearch guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
 
 if executable("ag")
   let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
