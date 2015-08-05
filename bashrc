@@ -152,8 +152,9 @@ fi
 
 # export JAVA_OPTS="-XX:+TieredCompilation -client"
 # export JRUBY_OPTS="--1.9 -X-C"
-export JAVA_OPTS="-client"
-export JRUBY_OPTS="--2.0"
+# export JAVA_OPTS="-client"
+# export JRUBY_OPTS="--2.0"
+# export CASSANDRA_HOME=/Users/szw/cassandra
 
 # PROMPT_COMMAND="echo -ne \"\\033]0;\${USER}@${HOSTNAME}\\007\\033k\${PWD}\\033\\\\\"; $PROMPT_COMMAND"
 
@@ -164,6 +165,3 @@ export JRUBY_OPTS="--2.0"
 #     screen-color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
 #     screen-256color) export PROMPT_COMMAND="set_tmux_title; $PROMPT_COMMAND";;
 # esac
-
-export MC_SKIN=$HOME/.mc/solarized.ini
-
