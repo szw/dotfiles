@@ -35,7 +35,6 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'cohama/lexima.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
@@ -85,6 +84,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
+Plugin 'cohama/lexima.vim'
 
 call vundle#end()
 " Swap/backup files
