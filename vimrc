@@ -35,6 +35,8 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'cohama/lexima.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
@@ -83,7 +85,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
-Plugin 'cohama/lexima.vim'
 
 call vundle#end()
 " Swap/backup files
@@ -370,7 +371,6 @@ function! CtrlSpaceStartWindowIndicator()
     return ctrlspace#api#BufNr() != -1 && t:CtrlSpaceStartWindow == winnr() ? ctrlspace#context#Configuration().Symbols.IA . " " : ""
 endfunction
 
-let g:CtrlSpaceFileEngine = "file_engine_darwin_amd64"
 " hi link CtrlSpaceSearch IncSearch
 
 if has("gui_running")
