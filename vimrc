@@ -295,8 +295,8 @@ augroup Text
 
     au FileType text,markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
-    " Support for the Markdown Viewer: https://github.com/szw/md
-    au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! md "' . expand('%:p') . '"' | redraw!
+    " Support for the Markdown Viewer: https://github.com/russross/blackfriday-tool
+    au FileType markdown command! -buffer -nargs=0 Md :silent! :exe '! ' . fnameescape($GOPATH) . '/bin/blackfriday-tool --css="http://thomasf.github.io/solarized-css/solarized-dark.min.css" ' . fnameescape(expand('%:p')) . ' /tmp/bft.html && open /tmp/bft.html' | redraw!
     au FileType markdown nnoremap <silent><buffer><F1> :Md<CR>
 augroup END
 
