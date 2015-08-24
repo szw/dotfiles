@@ -139,11 +139,16 @@ if [ $(uname -s) = "Darwin" ]; then
         . `brew --prefix`/etc/bash_completion
     fi
 
-    export GOPATH=$HOME/Projects/Go
+    export GOPATH=$HOME/Shared/Projects/Go
+    # export GO15VENDOREXPERIMENT=1
 
     if [[ $PATH != *"$GOPATH"* ]]; then
 	export PATH=$PATH:$GOPATH/bin
     fi
+
+    MVIM="/usr/local/bin/`readlink /usr/local/bin/mvim`"
+    alias mvi="reattach-to-user-namespace ${MVIM%/*}/../MacVim.app/Contents/MacOS/Vim"
+    alias vim='reattach-to-user-namespace /usr/local/bin/vim'
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"

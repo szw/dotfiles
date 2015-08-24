@@ -26,13 +26,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-" Plugin 'reedes/vim-pencil'
-
-" Plugin 'reedes/vim-colors-pencil'
 Plugin 'altercation/vim-colors-solarized'
-" Plugin 'NLKNguyen/papercolor-theme'
-" Plugin 'tomasr/molokai'
-
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ekalinin/Dockerfile.vim'
@@ -50,7 +44,6 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 Plugin 'nelstrom/vim-markdown-folding'
-Plugin 'oplatek/Conque-Shell'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
@@ -192,12 +185,7 @@ runtime macros/matchit.vim
 
 " Colors
 syntax enable
-" set background=light
 set background=dark
-" let g:pencil_higher_contrast_ui = 1
-" colorscheme PaperColor
-" colorscheme pencil
-" colorscheme molokai
 colorscheme solarized
 
 " Remove trailing spaces
@@ -303,13 +291,6 @@ augroup END
 " Custom plugins settings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" delimitMate
-augroup DelimitMateSettings
-    au!
-    au FileType eruby,html,xml let b:delimitMate_matchpairs = "(:),[:],{:}"
-augroup END
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 " let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
 
@@ -374,12 +355,15 @@ endfunction
 " hi link CtrlSpaceSearch IncSearch
 
 if has("gui_running")
-    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢", "NTM": " ⁺" }
+    " Settings for MacVim and Inconsolata font
+    let g:CtrlSpaceSymbols = { "File": "◯", "CTab": "▣", "Tabs": "▢" }
 endif
 
 if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
+
+let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|vendor)[\/]'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vinegar
@@ -418,11 +402,12 @@ call expand_region#custom_text_objects('ruby', {
             \ 'am' :0,
             \ })
 
-" ConqueTerm
-let g:ConqueTerm_ToggleKey = '<F7>'
-nnoremap <silent><F2> :ConqueTerm tmux -2u<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-tags
 " turn off autogenerating until bug with hanging process is fixed
 let g:vim_tags_auto_generate = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-go
+" let g:go_auto_type_info = 1
+let g:go_autodetect_gopath = 0
