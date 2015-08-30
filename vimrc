@@ -2,7 +2,7 @@
 set nocompatible
 set hidden
 set smartindent autoindent
-set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+set tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
 set number
 set nowrap
 set hls
@@ -71,7 +71,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rvm'
-Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
@@ -208,7 +207,6 @@ augroup END
 augroup PHP
     au!
     au FileType php setlocal omnifunc=phpcomplete#CompletePHP
-    au FileType php setlocal tabstop=4 shiftwidth=4 noexpandtab
     " au FileType php,html filetype indent off
     " au FileType php au InsertLeave * pclose
 augroup END
@@ -240,13 +238,12 @@ augroup END
 
 augroup Vimscript
     au!
-    au FileType vim setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab
     au FileType vim setlocal isk-=-
 augroup END
 
 augroup Javascript
     au!
-    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup END
 
 augroup CoffeeScript
@@ -262,7 +259,6 @@ augroup END
 augroup Css
     au!
     au FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
-    au FileType scss setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END
 
 augroup Xml
@@ -411,3 +407,7 @@ let g:vim_tags_auto_generate = 0
 " vim-go
 " let g:go_auto_type_info = 1
 let g:go_autodetect_gopath = 0
+au FileType go nnoremap <silent><buffer><F1> :GoInfo<CR>
+au FileType go nnoremap <silent><buffer><F2> :GoImports<CR>:w<CR>
+" au BufWritePre *.go GoImports
+" let g:go_fmt_autosave = 0
