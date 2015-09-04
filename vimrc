@@ -26,9 +26,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'cohama/lexima.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
@@ -75,7 +76,6 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/indenthtml.vim'
-Plugin 'cohama/lexima.vim'
 
 call vundle#end()
 " Swap/backup files
@@ -364,11 +364,6 @@ nmap <Leader>a <Plug>(EasyAlign)
 
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
-
-" indenthtml
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
-" let g:html_indent_inctags = "html,body,head,tbody"
 
 " expand_region
 call expand_region#custom_text_objects({
