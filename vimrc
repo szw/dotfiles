@@ -63,7 +63,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-characterize'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
@@ -286,19 +285,15 @@ augroup END
 
 " Custom plugins settings
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 " let g:syntastic_ruby_exec="~/.rvm/rubies/default/bin/ruby"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-Ruby
 let g:ruby_indent_access_modifier_style = "indent"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dict
 let g:dict_hosts = [["dict.org", ["english"]], ["dict.mova.org", ["slovnyk_en-pl", "slovnyk_pl-en"]]]
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tagbar
 nmap <silent><F8> :TagbarToggle<CR>
 
@@ -330,17 +325,13 @@ let g:tagbar_type_go = {
         \ 'ctagsargs' : '-sort -silent'
 \ }
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maximizer
 let g:maximizer_set_mapping_with_bang = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-Fugitive
 nnoremap <silent><F12> :Gstatus<CR>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlSpace
-
 nnoremap <silent><Leader>p :CtrlSpaceGoUp<CR>
 nnoremap <silent><Leader>n :CtrlSpaceGoDown<CR>
 
@@ -361,29 +352,24 @@ endif
 
 let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|vendor)[\/]'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vinegar
 let g:netrw_liststyle=1
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-x><c-u>"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easy-align
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-pasta
 let g:pasta_disabled_filetypes = ["python", "coffee", "markdown", "yaml", "slim", "haml"]
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indenthtml
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
-let g:html_indent_inctags = "html,body,head,tbody"
+" let g:html_indent_inctags = "html,body,head,tbody"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " expand_region
 call expand_region#custom_text_objects({
             \ 'a]' :1,
@@ -398,12 +384,10 @@ call expand_region#custom_text_objects('ruby', {
             \ 'am' :0,
             \ })
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-tags
 " turn off autogenerating until bug with hanging process is fixed
 let g:vim_tags_auto_generate = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-go
 " let g:go_auto_type_info = 1
 let g:go_autodetect_gopath = 0
@@ -411,3 +395,13 @@ au FileType go nnoremap <silent><buffer><F1> :GoInfo<CR>
 au FileType go nnoremap <silent><buffer><F2> :GoImports<CR>:w<CR>
 " au BufWritePre *.go GoImports
 " let g:go_fmt_autosave = 0
+
+" lexima.vim
+call lexima#add_rule({'char': '"', 'at': '\%#[A-Za-z0-9]', 'leave': 1})
+call lexima#add_rule({'char': '"', 'at': '[A-Za-z0-9]\%#', 'leave': 1})
+
+call lexima#add_rule({'char': "'", 'at': '\%#[A-Za-z0-9]', 'leave': 1})
+call lexima#add_rule({'char': "'", 'at': '[A-Za-z0-9]\%#', 'leave': 1})
+
+call lexima#add_rule({'char': '`', 'at': '\%#[A-Za-z0-9]', 'leave': 1})
+call lexima#add_rule({'char': '`', 'at': '[A-Za-z0-9]\%#', 'leave': 1})
