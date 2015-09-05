@@ -350,7 +350,7 @@ if executable("ag")
     let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
 
-let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|vendor)[\/]'
+let g:CtrlSpaceIgnoredFiles = '\v(tmp|temp|Godeps)[\/]'
 
 " Vinegar
 let g:netrw_liststyle=1
