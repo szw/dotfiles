@@ -149,6 +149,7 @@ if [ $(uname -s) = "Darwin" ]; then
     MVIM="/usr/local/bin/`readlink /usr/local/bin/mvim`"
     alias mvi="reattach-to-user-namespace ${MVIM%/*}/../MacVim.app/Contents/MacOS/Vim"
     alias vim='reattach-to-user-namespace /usr/local/bin/vim'
+    alias tm='TMUX_EXECUTABLE=tmate tmate -2u'
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"

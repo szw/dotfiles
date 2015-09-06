@@ -339,6 +339,8 @@ function! CtrlSpaceStartWindowIndicator()
     return ctrlspace#api#BufNr() != -1 && t:CtrlSpaceStartWindow == winnr() ? ctrlspace#context#Configuration().Symbols.IA . " " : ""
 endfunction
 
+let g:CtrlSpaceSearchTiming = 100
+
 " hi link CtrlSpaceSearch IncSearch
 
 if has("gui_running")
