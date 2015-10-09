@@ -124,8 +124,6 @@ endif
 set foldmethod=indent
 set foldlevelstart=99
 
-nnoremap <silent><Leader>f :if &fdm == "indent" <bar> setl fdm=marker <bar> else <bar> setl fdm=indent <bar> endif<CR>
-
 " Paste mode
 set pastetoggle=<F5>
 
@@ -134,9 +132,6 @@ nnoremap <silent><S-TAB> <C-o>
 
 " List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.:<CR>
-
-" Toggle wrapping
-nnoremap <silent><Leader>w :if &wrap <bar> set nowrap <bar> else <bar> set wrap <bar> endif<CR>
 
 "Improve window resizing
 nnoremap <silent><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
@@ -332,8 +327,8 @@ let g:maximizer_set_mapping_with_bang = 1
 nnoremap <silent><F12> :Gstatus<CR>
 
 " CtrlSpace
-nnoremap <silent><Leader>p :CtrlSpaceGoUp<CR>
-nnoremap <silent><Leader>n :CtrlSpaceGoDown<CR>
+" nnoremap <silent><Leader>p :CtrlSpaceGoUp<CR>
+" nnoremap <silent><Leader>n :CtrlSpaceGoDown<CR>
 
 function! CtrlSpaceStartWindowIndicator()
     return ctrlspace#api#BufNr() != -1 && t:CtrlSpaceStartWindow == winnr() ? ctrlspace#context#Configuration().Symbols.IA . " " : ""
@@ -386,10 +381,12 @@ let g:vim_tags_auto_generate = 0
 " vim-go
 " let g:go_auto_type_info = 1
 let g:go_autodetect_gopath = 0
+
 au FileType go nnoremap <silent><buffer><F1> :GoInfo<CR>
 au FileType go nnoremap <silent><buffer><F2> :GoImports<CR>:w<CR>
 " au BufWritePre *.go GoImports
 " let g:go_fmt_autosave = 0
+let g:go_fmt_fail_silently = 1
 
 " lexima.vim
 call lexima#add_rule({'char': '"', 'at': '\%#[A-Za-z0-9]', 'leave': 1})
@@ -400,3 +397,9 @@ call lexima#add_rule({'char': "'", 'at': '[A-Za-z0-9]\%#', 'leave': 1})
 
 call lexima#add_rule({'char': '`', 'at': '\%#[A-Za-z0-9]', 'leave': 1})
 call lexima#add_rule({'char': '`', 'at': '[A-Za-z0-9]\%#', 'leave': 1})
+
+" Easymotion
+map <Leader> <Plug>(easymotion-prefix)
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
