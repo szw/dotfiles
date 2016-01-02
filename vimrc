@@ -26,13 +26,18 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-sbt'
+" Plugin 'ensime/ensime-vim'
+" Plugin 'kien/rainbow_parentheses.vim'
+
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cohama/lexima.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 Plugin 'fatih/vim-go'
 Plugin 'glts/vim-textobj-comment'
 Plugin 'jgdavey/vim-blockle'
@@ -403,3 +408,37 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
+
+
+
+" let g:rbpt_colorpairs = [
+"     \ ['brown',       'RoyalBlue3'],
+"     \ ['Darkblue',    'SeaGreen3'],
+"     \ ['darkgray',    'DarkOrchid3'],
+"     \ ['darkgreen',   'firebrick3'],
+"     \ ['darkcyan',    'RoyalBlue3'],
+"     \ ['darkred',     'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['brown',       'firebrick3'],
+"     \ ['gray',        'RoyalBlue3'],
+"     \ ['black',       'SeaGreen3'],
+"     \ ['darkmagenta', 'DarkOrchid3'],
+"     \ ['Darkblue',    'firebrick3'],
+"     \ ['darkgreen',   'RoyalBlue3'],
+"     \ ['darkcyan',    'SeaGreen3'],
+"     \ ['darkred',     'DarkOrchid3'],
+"     \ ['red',         'firebrick3'],
+"     \ ]
+" let g:rbpt_max = 16
+" let g:rbpt_loadcmd_toggle = 0
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
+"
+
+let g:syntastic_ignore_files = ['\m\c\.h$', '\m\.sbt$']
+
+" Scala has fsc and scalac checkers--running both is pretty redundant and
+" slow. An explicit `:SyntasticCheck scalac` can always run the other.
+let g:syntastic_scala_checkers = ['fsc']

@@ -1,4 +1,4 @@
-set guifont=Inconsolata:h16
+set guifont=Inconsolata:h14
 " set guifont=Consolas:h14
 " set guifont=Meslo\ LG\ S\ Regular:h14
 " set guifont=InputMono:h12

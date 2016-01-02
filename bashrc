@@ -150,6 +150,11 @@ if [ $(uname -s) = "Darwin" ]; then
     alias mvi="reattach-to-user-namespace ${MVIM%/*}/../MacVim.app/Contents/MacOS/Vim"
     alias vim='reattach-to-user-namespace /usr/local/bin/vim'
     alias tm='TMUX_EXECUTABLE=tmate tmate -2u'
+    export SCALA_HOME=/usr/local/bin/scala
+    export PATH=$PATH:$SCALA_HOME/bin
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+    export BROWSER="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
