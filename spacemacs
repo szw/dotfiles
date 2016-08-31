@@ -36,6 +36,7 @@ values."
      ruby
      ;; themes-megapack
      (shell :variables
+            shell-default-shell 'shell
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
@@ -46,12 +47,9 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages
-   '(
-     cql-mode
-     )
+   dotspacemacs-additional-packages '(cql-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(vi-tilde-fringe)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -72,7 +70,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -234,7 +232,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -244,9 +242,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-
-  (add-hook 'scala-mode-hook (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
   (setq ensime-sem-high-faces '((implicitConversion nil) (implicitParams nil)))
+  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
+  (push '(ensime . "melpa-stable") package-pinned-packages)
   )
 
 (defun dotspacemacs/user-config ()
@@ -256,7 +254,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+  (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+  (global-set-key (kbd "M-m s e") 'iedit-mode)
+  (setq powerline-default-separator 'bar)
+  (spaceline-compile)
+  (global-git-commit-mode t)
+  (setq create-lockfiles nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
