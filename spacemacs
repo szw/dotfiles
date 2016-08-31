@@ -260,6 +260,8 @@ you should place your code here."
   (spaceline-compile)
   (global-git-commit-mode t)
   (setq create-lockfiles nil)
+  (setq dired-use-ls-dired nil)
+  (setq ns-pop-up-frames nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
