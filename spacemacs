@@ -30,7 +30,7 @@ values."
      markdown
      org
      scala
-     java
+     ;; java ;; Use Ensime/Enjime from scala layer instead
      javascript
      go
      ruby
@@ -262,6 +262,21 @@ you should place your code here."
   (setq create-lockfiles nil)
   (setq dired-use-ls-dired nil)
   (setq ns-pop-up-frames nil)
+
+  ;; Work around OS X / Emacs 24 fullscreen quit crash.
+  (defun demaximize-frame (&rest args)
+    "Unmaximize the current or passed frame if maximized, otherwise do nothing."
+    (if args (select-frame (car args) t))
+    (if (equal (assoc 'fullscreen (frame-parameters))
+               (cons 'fullscreen 'fullboth))
+        (toggle-frame-fullscreen)))
+  (advice-add 'delete-frame :before #'demaximize-frame)
+
+  ;; Use Ensime and Enjime for Java (instead of Eclim)
+  (require 'ensime)
+  (setq exec-path (append exec-path '("/usr/local/bin")))
+  (add-hook 'java-mode-hook 'scala/configure-ensime)
+  (add-hook 'java-mode-hook 'scala/maybe-start-ensime)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
