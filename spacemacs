@@ -49,7 +49,30 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(cql-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(vi-tilde-fringe)
+   dotspacemacs-excluded-packages
+   '(
+     vi-tilde-fringe
+     evil-leader
+     evil-indent-textobject
+     evil-visualstar
+     evil-exchange
+     evil-surround
+     evil-matchit
+     evil-search-highlight-persist
+     evil-numbers
+     evil-args
+     evil-jumper
+     evil-anzu
+     evil-escape
+     evil-iedit-state
+     evil-indent-plus
+     evil-lisp-state
+     evil-magit
+     evil-mc
+     evil-terminal-cursor-changer
+     evil-tutor
+     neotree
+     )
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
