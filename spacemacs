@@ -52,16 +52,14 @@ values."
    dotspacemacs-excluded-packages
    '(
      vi-tilde-fringe
-     evil-leader
-     evil-indent-textobject
      evil-visualstar
      evil-exchange
+     evil-nerd-commenter
      evil-surround
      evil-matchit
      evil-search-highlight-persist
      evil-numbers
      evil-args
-     evil-jumper
      evil-anzu
      evil-escape
      evil-iedit-state
@@ -69,7 +67,6 @@ values."
      evil-lisp-state
      evil-magit
      evil-mc
-     evil-terminal-cursor-changer
      evil-tutor
      neotree
      )
@@ -277,10 +274,28 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  ;; toggles
   (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+
+  ;; key bindings
   (global-set-key (kbd "M-m s e") 'iedit-mode)
+
+  (defun comment-or-uncomment-lines ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+      (if (region-active-p)
+          (setq beg (region-beginning) end (region-end))
+        (setq beg (line-beginning-position) end (line-end-position)))
+      (comment-or-uncomment-region beg end)))
+  (global-set-key (kbd "M-m c l") 'comment-or-uncomment-lines)
+
+  ;; spaceline modifications
   (setq powerline-default-separator 'bar)
   (spaceline-compile)
+
+  ;; various settings
   (global-git-commit-mode t)
   (setq create-lockfiles nil)
   (setq dired-use-ls-dired nil)
