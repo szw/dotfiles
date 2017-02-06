@@ -291,6 +291,12 @@ you should place your code here."
       (comment-or-uncomment-region beg end)))
   (global-set-key (kbd "M-m c l") 'comment-or-uncomment-lines)
 
+  (defun top-join-line ()
+    "Join the current line with the line beneath it."
+    (interactive)
+    (delete-indentation 1))
+  (global-set-key (kbd "C-^") 'top-join-line)
+
   ;; spaceline modifications
   (setq powerline-default-separator 'bar)
   (spaceline-compile)

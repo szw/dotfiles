@@ -146,15 +146,18 @@ if [ $(uname -s) = "Darwin" ]; then
 	export PATH=$PATH:$GOPATH/bin
     fi
 
-    MVIM="/usr/local/bin/`readlink /usr/local/bin/mvim`"
-    alias mvi="reattach-to-user-namespace ${MVIM%/*}/../MacVim.app/Contents/MacOS/Vim"
+    # MVIM="/usr/local/bin/`readlink /usr/local/bin/mvim`"
+    # alias mvi="reattach-to-user-namespace ${MVIM%/*}/../MacVim.app/Contents/MacOS/Vim"
     alias vim='reattach-to-user-namespace /usr/local/bin/vim'
-    alias tm='TMUX_EXECUTABLE=tmate tmate -2u'
+    alias emacs='reattach-to-user-namespace open -a /Applications/Emacs.app'
+    export EDITOR="/Applications/Emacs.app/Contents/MacOS/Emacs"
+    # alias tm='TMUX_EXECUTABLE=tmate tmate -2u'
     export SCALA_HOME=/usr/local/bin/scala
     export PATH=$PATH:$SCALA_HOME/bin:$HOME/activator/bin
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
+    export JAVA_HOME=/Users/szw/jdk1.8.0
     export PATH=$JAVA_HOME/bin:$PATH:$HOME/node_modules/.bin
-    export BROWSER="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    # export BROWSER="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    export JAVA_OPTS="$JAVA_OPTS -Duser.country=US -Duser.language=en-US"
 else
     PATH=$HOME/.local/bin:$PATH
     export JAVA_HOME="/usr/lib/jvm/jdk"
